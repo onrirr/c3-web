@@ -1,0 +1,1633 @@
+---
+// import DemoSlice from "./demo_slice.astro";
+import DemoSliceCodeOnly from "./demo_slice_code_only.astro"
+
+//=======================================
+// Code highlighting
+import * as fs from 'fs';
+import { createHighlighter } from 'shiki'
+// import type StarlightIntegration from "@astrojs/starlight"
+
+
+// load the language
+const c3LangGrammar = JSON.parse(fs.readFileSync("./c3-grammar.json", "utf-8"))
+
+const highlighter = await createHighlighter({
+    themes: ['slack-dark', 'min-light', 'andromeeda', 'github-light-default', 'material-theme-lighter'],
+    langs: [c3LangGrammar]
+})
+
+
+
+//=======================================
+// Code to highlight
+const code_input = [
+{
+    "name": "Optionals",
+    "desktop_code": 
+`import std::io;
+
+fn void! test()
+{
+    // Return an Excuse by adding '?' after the fault.
+    return IoError.FILE_NOT_FOUND?;
+}
+
+fn void main(String[] args)
+{
+    // If the Optional is empty, assign the
+    // Excuse to a variable:
+    if (catch excuse = test())
+    {
+        io::printfn("test() gave an Excuse: %s", excuse);
+    }
+}`,
+    "mobile_code": 
+`import std::io;
+
+fn void! test()
+{
+    // Return an Excuse by with
+    // '?' after the fault.
+    return IoError.READ_ONLY?;
+}
+
+fn void main(String[] args)
+{
+    // If the Optional is empty
+    // assign the Excuse
+    // to a variable:
+    if (catch excuse = test())
+    {
+        io::printfn(
+            "Excuse: %s", excuse
+        );
+    }
+}`    
+},
+{
+    "name": "Defer",
+    "desktop_code": 
+`import std::io;
+
+fn void! main()
+{
+    int* x = mem::new(int);
+    // Free memory on scope exit
+    defer free(x); 
+
+    io::printfn("x: %s", *x);
+}
+`,
+    "mobile_code": 
+`import std::io;
+
+fn void! main()
+{
+    int* x = mem::new(int);
+    // Free memory on scope exit
+    defer free(x); 
+
+    io::printfn("x: %s", *x);
+}`    
+},
+{
+    "name": "Slices",
+    "desktop_code": 
+`fn void main()
+{
+    int[3] a = { 1, 20, 50 };
+    // selects [ 20, 50 ]
+    int[] c = a[1 .. 2]; 
+}`,
+    "mobile_code":
+`fn void main()
+{
+    int[3] a = { 1, 20, 50 };
+    // selects [ 20, 50 ]
+    int[] c = a[1 .. 2]; 
+}`
+},
+{
+    "name": "Contracts",
+    "desktop_code": 
+`<*
+ @require x != 0 "infinite result" 
+*>
+fn float divide(int x)
+{
+    return 1.0f / x;
+}`,
+    "mobile_code":
+`<*
+ @require x != 0 "returns inf" 
+*>
+fn float divide(int x)
+{
+    return 1.0f / x;
+}`
+}
+]
+
+
+//=============================================
+
+
+const code_input_perf = [
+{
+    "name": "Temp Allocator",
+    "desktop_code": 
+`fn void! main()
+{
+    @pool()
+    {
+        DString message;
+        message.temp_init();
+        message.append("Welcome!\\n");
+        message.append("歡迎!");
+        io::printn(message);
+    };
+    // "message" is automatically freed here
+    // freed variables unavailable
+}`,
+    "mobile_code": 
+`fn void! main()
+{
+    @pool()
+    {
+        DString msg;
+        msg.temp_init();
+        msg.append("Hi!\\n");
+        msg.append("你好!");
+        io::printn(msg);
+    };
+    // "msg" is freed
+    // freed variables unavailable
+}`    
+},
+{
+    "name": "SIMD",
+    "desktop_code": 
+`import std::io;
+
+// Vectors are based on hardware SIMD vectors, 
+// and supports many different operations that 
+// work on all elements in parallel 
+// for example arithmetic:
+
+fn void main()
+{
+    int[<2>] a = { 3, 8 };
+    int[<2>] b = { 7, 2 };
+    // c is { 21, 16 }
+    int[<2>] c = a * b;
+    io::print(c);
+}
+`,
+    "mobile_code": 
+`import std::io;
+
+// Vectors are based on hardware 
+// SIMD vectors, and support 
+// operations that work on all 
+// elements in parallel
+// For example arithmetic:
+
+fn void main()
+{
+    int[<2>] a = { 3, 8 };
+    int[<2>] b = { 7, 2 };
+    // c is { 21, 16 }
+    int[<2>] c = a * b;
+    io::print(c);
+}`,
+},
+{
+    "name": "Inline ASM",
+    "desktop_code": 
+`int x = 3;
+int g;
+int* gptr = &g;
+
+asm
+{
+    // Move 1 into the variable x
+    movl x, 1;
+
+    // Move value of x into address gptr
+    movl [gptr], x;      
+
+    // Move 23 + x into EAX register
+    movl $eax, (23 + x); 
+}`,
+    "mobile_code":
+`int x = 3;
+int g;
+int* ptr = &g;
+
+asm
+{
+    // Move 1 into the variable x
+    movl x, 1;
+
+    // *ptr = x 
+    movl [ptr], x;      
+
+    // Move 23 + x into EAX
+    movl $eax, (23 + x); 
+}`
+},
+{
+    "name": "Threads",
+    "desktop_code": 
+`import std::thread;
+import std::io;
+
+fn int thread_fn(void* arg)
+{
+    int x = *(int*)arg;
+    io::printfn("x: %s", x);
+    return 0;
+}
+
+fn void! main()
+{
+    int arg = 7;
+    std::thread::Thread t1,t2;
+    t1.create(&thread_fn, &arg)!;
+    t2.create(&thread_fn, &arg)!;
+
+    t1.join()!;
+    t2.join()!;
+}`,
+    "mobile_code":
+`import std::thread;
+import std::io;
+
+fn int thread_fn(void* arg)
+{
+    int x = *(int*)arg;
+    io::printfn("x: %s", x);
+    return 0;
+}
+
+fn void! main()
+{
+    int arg = 7;
+    std::thread::Thread t1,t2;
+    t1.create(&thread_fn, &arg)!;
+    t2.create(&thread_fn, &arg)!;
+
+    t1.join()!;
+    t2.join()!;
+}`
+}
+]
+
+
+
+
+
+//=======================================
+
+// Clear up the formatter resources after 2s
+await setTimeout(highlighter.dispose, 2000)
+
+---
+
+
+<script lang="js">
+    // record browser preference
+    let browserPreferDark = false;
+    if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+        browserPreferDark = true;
+    }
+
+    // automatically set theme based on browser's theme preference
+    if (localStorage["starlight-theme"] === undefined) {
+        if (browserPreferDark) {
+            localStorage["starlight-theme"] = "dark";
+            document.documentElement.classList.add("dark");
+        } else {
+            localStorage["starlight-theme"] = "light";
+            document.documentElement.classList.remove("dark");
+        }
+    }
+
+    // read previously set value, apply the theme
+    if (localStorage["starlight-theme"] === "dark") {
+        document.documentElement.classList.add("dark");
+    }
+
+    // Change local storage value setting the theme
+    function lightModeClickhandler() {
+        // if was dark before set to light
+        if (localStorage["starlight-theme"] === "dark") {
+            localStorage["starlight-theme"] = "light";
+        }
+        // if was light before set to dark
+        else if (localStorage["starlight-theme"] === "light") {
+            localStorage["starlight-theme"] = "dark";
+        }
+
+        // use the local storage value to change the classes applied throughout
+        if (localStorage["starlight-theme"] === "dark") {
+            document.documentElement.classList.add("dark");
+        } else if (localStorage["starlight-theme"] === "light") {
+            document.documentElement.classList.remove("dark");
+        }
+
+        return;
+    }
+
+</script>
+
+
+<header class="
+    md:sticky
+    md:top-0
+    md:z-50
+    md:pr-12
+    
+    grid
+    grid-cols-3
+    grid-rows-4
+
+    gap-3
+    md:gap-0
+    py-2
+    md:py-0
+
+    md:grid-cols-[max-content_max-content_max-content_max-content_max-content_max-content_1fr_max-content_max-content_max-content_max-content]
+    md:grid-rows-1
+    justify-items-center
+    content-center
+    items-center
+    select-none
+    font-medium
+    text-indigo-950
+    bg-white
+    dark:bg-[hsl(224,12%,4%)]
+    md:h-14
+    border-b-2
+    border-b-gray-200
+    dark:border-b-gray-800"
+>
+    <span class="
+        px-12
+        text-3xl
+        font-bold
+        row-span-1
+        col-start-2
+        md:row-start-1
+        md:col-start-1
+        bg-gradient-to-l
+        from-violet-600
+        to-blue-600
+        dark:from-violet-500
+        dark:to-blue-500
+        bg-clip-text 
+        text-transparent
+        w-full
+        h-full
+        flex
+        items-center
+        justify-center"
+    >
+        C3
+    </span>
+
+    <!-- ================================= -->
+
+    <a class="
+        flex
+        items-center
+        justify-center
+        px-3
+        row-span-1
+        col-start-1
+        md:row-start-1
+        md:col-start-2
+         
+        hover:text-blue-500
+        w-full
+        h-full
+        dark:text-gray-200
+        dark:hover:text-blue-400"
+        href="/getting-started/"
+    >
+        Docs 
+    </a>
+
+    <!-- ================================= -->
+
+    <a class="
+        flex
+        items-center
+        justify-center
+        px-3
+        row-span-1
+        md:row-start-1 
+        md:col-start-3
+        
+        hover:text-blue-500
+        w-full
+        h-full
+        dark:text-gray-200
+        dark:hover:text-blue-400"
+        href="/language-overview/examples/"
+    > 
+        Examples
+    </a>
+
+    <!-- ================================= -->
+    
+    <a class="
+        flex
+        items-center
+        justify-center
+        px-3
+        row-span-1
+        col-start-3
+        md:row-start-1 
+        md:col-start-4
+        
+        hover:text-blue-500
+        w-full
+        h-full
+        dark:text-gray-200
+        dark:hover:text-blue-400"
+        href="/getting-started/prebuilt-binaries/"
+    >
+        Download
+    </a>
+
+    <!-- ================================= --> 
+
+    <a class="
+        flex
+        items-center
+        justify-center
+        px-3
+        row-span-1
+        md:row-start-1 
+        md:col-start-5
+        
+        hover:text-blue-500
+        w-full
+        h-full
+        dark:text-gray-200
+        dark:hover:text-blue-400"
+        href="/get-involved/"
+    >
+        Community
+    </a>
+
+    <!-- ================================= -->
+
+    <a class="
+        flex
+        items-center
+        justify-center
+        px-3
+        row-span-1
+        md:row-start-1 
+        md:col-start-6
+        
+        hover:text-blue-500
+        w-full
+        h-full
+        dark:text-gray-200
+        dark:hover:text-blue-400"
+        href="https://github.com/sponsors/c3lang"
+    >
+        Sponsor 
+    </a>
+
+    <!-- ================================= -->
+
+    <div class="
+        px-3
+        group
+        flex
+        dark:hidden
+        group
+        items-center
+        content-center
+        justify-center
+        font-medium
+        md:col-start-8
+        md:row-start-1
+        h-full
+        w-full
+        cursor-pointer
+        
+        dark:text-gray-200
+        dark:hover:text-blue-400"
+        role="button"
+        onmousedown=lightModeClickhandler()
+    >
+        
+        <p class="
+            text-sm
+            bg-clip-text 
+            text-transparent
+            bg-black
+            group-hover:bg-blue-500
+            ">
+            🌙
+        </p>
+        
+    </div>
+    <div
+        class="
+        px-3
+        group
+        hidden
+        dark:flex
+        group
+        items-center
+        justify-center
+        
+        font-medium
+        md:col-start-8
+        md:row-start-1
+        w-full
+        h-full
+        cursor-pointer"
+        role="button"
+        onmousedown=lightModeClickhandler()
+    >
+        <p class="
+            text-sm
+            bg-clip-text 
+            text-transparent
+            bg-white
+            group-hover:bg-blue-500
+            ">
+            ☀
+        </p>
+
+    </div>
+
+    <!-- ================================= -->
+
+    <!-- Github Icon -->
+    <a class="
+        px-3
+        flex
+        items-center
+        justify-center
+        justify-items-center
+        md:row-start-1
+        md:col-start-9
+        
+        hover:fill-blue-500
+        dark:hover:fill-blue-400
+        dark:fill-white
+        w-full
+        h-full" 
+        href="https://github.com/c3lang/c3c/discussions"
+    >
+        <svg
+            class="ml-1 h-4"
+            viewBox="0 0 100 96.36"
+            xmlns="http://www.w3.org/2000/svg"
+        >
+            <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M48.854 0C21.839 0 0 22 0 49.217c0 21.756 13.993 40.172 33.405 46.69 2.427.49 3.316-1.059 3.316-2.362 0-1.141-.08-5.052-.08-9.127-13.59 2.934-16.42-5.867-16.42-5.867-2.184-5.704-5.42-7.17-5.42-7.17-4.448-3.015.324-3.015.324-3.015 4.934.326 7.523 5.052 7.523 5.052 4.367 7.496 11.404 5.378 14.235 4.074.404-3.178 1.699-5.378 3.074-6.6-10.839-1.141-22.243-5.378-22.243-24.283 0-5.378 1.94-9.778 5.014-13.2-.485-1.222-2.184-6.275.486-13.038 0 0 4.125-1.304 13.426 5.052a46.97 46.97 0 0 1 12.214-1.63c4.125 0 8.33.571 12.213 1.63 9.302-6.356 13.427-5.052 13.427-5.052 2.67 6.763.97 11.816.485 13.038 3.155 3.422 5.015 7.822 5.015 13.2 0 18.905-11.404 23.06-22.324 24.283 1.78 1.548 3.316 4.481 3.316 9.126 0 6.6-.08 11.897-.08 13.526 0 1.304.89 2.853 3.316 2.364 19.412-6.52 33.405-24.935 33.405-46.691C97.707 22 75.788 0 48.854 0z"
+            ></path>
+        </svg>
+
+    </a>
+
+    <!-- ================================= -->
+
+    <!-- Discourse Icon -->
+    <a class="
+        px-3
+        flex
+        items-center
+        justify-center
+        justify-items-center
+        md:row-start-1
+        md:col-start-10
+         
+        hover:fill-blue-500
+        dark:hover:fill-blue-400
+        dark:fill-white
+        w-full
+        h-full"
+        href="https://c3lang.discourse.group/"
+    >
+        <svg
+            class="ml-1 h-4"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            role="img"
+        >
+            <path
+                d="M12.103 0C18.666 0 24 5.485 24 11.997c0 6.51-5.33 11.99-11.9 11.99L0 24V11.79C0 5.28 5.532 0 12.103 0zm.116 4.563a7.395 7.395 0 0 0-6.337 3.57 7.247 7.247 0 0 0-.148 7.22L4.4 19.61l4.794-1.074a7.424 7.424 0 0 0 8.136-1.39 7.256 7.256 0 0 0 1.737-7.997 7.375 7.375 0 0 0-6.84-4.585h-.008z"
+            ></path>
+        </svg>
+
+    </a>
+
+    <!-- ================================= -->
+
+    <!-- Discord -->
+    <a class="
+        px-2
+        flex
+        items-center
+        justify-center
+        justify-items-center
+        md:row-start-1
+        md:col-start-11
+         
+        hover:fill-blue-500
+        dark:hover:fill-blue-400
+        dark:fill-white
+        w-full
+        h-full"
+        href="https://discord.gg/qN76R87"
+    >
+        <svg
+            class="h-4"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 127.14 96.36"
+        >
+            <path
+                d="M107.7,8.07A105.15,105.15,0,0,0,81.47,0a72.06,72.06,0,0,0-3.36,6.83A97.68,97.68,0,0,0,49,6.83,72.37,72.37,0,0,0,45.64,0,105.89,105.89,0,0,0,19.39,8.09C2.79,32.65-1.71,56.6.54,80.21h0A105.73,105.73,0,0,0,32.71,96.36,77.7,77.7,0,0,0,39.6,85.25a68.42,68.42,0,0,1-10.85-5.18c.91-.66,1.8-1.34,2.66-2a75.57,75.57,0,0,0,64.32,0c.87.71,1.76,1.39,2.66,2a68.68,68.68,0,0,1-10.87,5.19,77,77,0,0,0,6.89,11.1A105.25,105.25,0,0,0,126.6,80.22h0C129.24,52.84,122.09,29.11,107.7,8.07ZM42.45,65.69C36.18,65.69,31,60,31,53s5-12.74,11.43-12.74S54,46,53.89,53,48.84,65.69,42.45,65.69Zm42.24,0C78.41,65.69,73.25,60,73.25,53s5-12.74,11.44-12.74S96.23,46,96.12,53,91.08,65.69,84.69,65.69Z"
+            ></path>
+        </svg>
+
+    </a>
+
+    <!-- ================================= -->
+</header>
+
+<!-- Hero banner -->
+<div class="
+    grid
+    grid-rows-3
+    md:grid-rows-5
+    grid-cols-4
+    lg:grid-cols-[repeat(12,minmax(0,1fr))]
+    items-center
+    w-full
+    p-12
+    md:p-24
+    bg-[hsl(228,13%,92%)]
+    dark:bg-[hsl(223,13%,22%)]
+    "
+>
+    <div class="
+        col-start-9
+        col-end-13
+        row-span-3
+        lg:row-start-2
+        h-full
+        bg-[url('/logo_big.png')]
+        brightness-100
+        contrast-[110%]
+        
+        dark:brightness-[80%]
+        dark:contrast-[125%]
+        bg-no-repeat
+        bg-center
+        bg-cover
+        z-10"
+    />
+
+    <h1
+        class="
+        col-start-1
+        col-end-9
+        row-start-1
+        md:row-start-2
+
+        text-3xl
+        md:text-4xl
+        font-bold
+        dark:text-gray-100"
+    >
+        The
+        <span
+            class="
+            text-3xl
+            md:text-4xl
+            font-bold
+            bg-clip-text
+            bg-gradient-to-l
+            from-violet-600
+            to-blue-600
+            dark:from-violet-500
+            dark:to-blue-500
+            text-transparent"
+        >
+            C3
+        </span>
+    Language
+    </h1>
+
+    <p class="
+        col-start-1
+        col-span-full
+        lg:col-end-9
+        row-start-2
+        md:row-start-3
+        my-6
+        dark:text-gray-100
+        text-xl
+        md:text-2xl
+    ">
+        Making it <b>Easier</b> to write <b>Safe</b>, <b>High Performance</b
+        > and <b>C-Like</b> code.
+    </p>
+
+    <div class="
+        col-start-1
+        col-span-4
+        row-start-3
+        md:row-start-4
+        
+        grid 
+        gap-3 
+        w-full 
+        md:flex 
+        md:mt-6
+        
+        "
+    >
+        <a
+            class="
+            flex
+            justify-center
+            items-center
+            gap-x-3 
+            text-center
+            bg-blue-600
+            border-blue-600
+            hover:border-slate-950
+            border-2
+            rounded-md
+            py-3
+            px-2
+            md:px-14
+            shadow-sm
+            focus:z-10
+            focus:outline-none focus:ring-2 dark:focus:ring-blue-200 focus:ring-blue-800 focus:ring-offset-2 focus:ring-offset-white dark:focus:ring-offset-stone-950
+            transition-all
+            leading-1
+            text-sm
+            text-white
+            font-medium
+            select-none
+            dark:bg-blue-600
+            dark:hover:border-blue-500
+            dark:border-blue-600
+            dark:text-white"
+            href="/getting-started/"
+        >
+            Get started
+            <svg
+            class="w-3 h-3 ml-2"
+            viewBox="0 0 16 16"
+            fill="none"
+            >
+            <path
+                d="M5.27921 2L10.9257 7.64645C11.1209 7.84171 11.1209 8.15829 10.9257 8.35355L5.27921 14"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"></path>
+            </svg>
+        </a>
+    </div>
+   
+</div>
+
+
+<!-- Features block -->
+<div class="
+    grid
+    grid-cols-1
+    lg:grid-cols-12
+    dark:text-gray-200
+    p-12
+    rounded-sm
+    bg-gray-50
+    dark:bg-[hsl(224,12%,4%)]
+"
+>
+    <div class="
+        lg:row-start-1
+        lg:col-span-5
+        flex
+        flex-col
+        justify-center
+        
+        md:p-12
+        lg:pr-24
+    ">
+        <h1 class="
+            text-3xl
+            md:text-4xl
+            font-bold
+            dark:text-gray-100
+            py-12
+            "
+        >
+        Safety And Flexibility
+        </h1>
+
+        <p class="pb-8">
+            C3's has powerful safety features covering null safety, 
+            error handling, handling resource cleanup, 
+            verifying system constraints and certain kinds of 
+            use-after-free and memory leaks.
+        </p>
+
+        <p class="pb-8">
+            Flexibly choose how you manage safety, as each feature 
+            is opt-in so you can tailor it to suit your domain.
+        </p>
+    </div>
+
+    
+    <div class="
+        py-12
+        -mx-8
+        lg:mx-0
+        lg:col-start-6
+        lg:col-span-7
+        
+    ">
+        <DemoSliceCodeOnly
+            height="xl:h-[32rem] h-[37rem]"
+            buttons={
+                [
+                    "Optionals",
+                    "Defer",
+                    "Slices",
+                    "Contracts"
+                ]
+            }
+            code={code_input}
+            highlighter={highlighter}
+        />
+    </div>
+
+</div>
+
+<!-- Features block -->
+<div class="
+    grid
+    grid-cols-1
+    lg:grid-cols-12
+    dark:text-gray-200
+    p-12
+    rounded-sm
+    bg-[hsl(228,13%,92%)]
+    dark:bg-[hsl(223,13%,22%)]
+    "
+>
+    <div class="
+        lg:row-start-1
+        lg:col-start-8
+        lg:col-span-5
+        flex
+        flex-col
+        justify-center
+        
+        md:p-12
+        lg:pl-24
+    ">
+        <h1 class="
+            text-3xl
+            md:text-4xl
+            font-bold
+            dark:text-gray-100
+            py-12
+            "
+        >
+        High Performance
+        </h1>
+
+        <p class="pb-8">
+            Choose from multiple memory allocators to achieve 
+            high performance for your application. Ranging from 
+            throughput centered servers to latency critical embedded systems.
+        </p>
+
+        <p class="pb-8">
+            Optimise your code's throughput with control your program's 
+            memory layout, multi-threading and easy access to SIMD and 
+            inline ASM when you need it. 
+        </p>
+
+        <p class="pb-8">
+            You no longer have to choose between performance and correctness, 
+            error handling is natively supported without performance cost.
+        </p>
+
+
+
+    </div>
+
+    
+    <div class="
+        py-12
+        -mx-8
+        lg:mx-0
+        lg:col-start-1
+        lg:col-span-7
+    ">
+        <DemoSliceCodeOnly
+            height="xl:h-[36rem] h-[34rem]"
+            buttons={
+                [
+                    "Temp Allocator",
+                    "SIMD",
+                    "Inline ASM",
+                    "Threads"
+                ]
+            }
+            code={code_input_perf}
+            highlighter={highlighter}
+        />
+    </div>
+
+</div>
+
+
+<!-- Features block -->
+<div class="
+    grid
+    grid-cols-1
+    lg:grid-cols-12
+    dark:text-gray-200
+    p-12
+    rounded-sm
+    bg-gray-50
+    dark:bg-[hsl(224,12%,4%)]
+    "
+>
+    <div class="
+        lg:row-start-1
+        lg:col-span-5
+        flex
+        flex-col
+        justify-center
+        
+        md:p-12
+        lg:pr-24
+    ">
+        <h1 class="
+            text-3xl
+            md:text-4xl
+            font-bold
+            dark:text-gray-100
+            py-12
+            "
+        >
+        Simple And Reusable
+        </h1>
+
+        <p class="pb-8">
+            Bring your existing C code with you! C3 fits into 
+            existing C projects (for example 
+            <a class="
+                font-semibold 
+                hover:text-blue-500 
+                hover:underline" 
+                href="https://github.com/c3lang/vkQuake"
+            >
+                VKQuake</a>), 
+            or you can natively link C into C3 projects.
+        </p>
+
+        <p class="pb-8">
+            Code in C3 is organised into namespaced modules, with simple 
+            methods to share behaviour between structs via interfaces or 
+            struct subtyping and to abstract differences  in behaviour 
+            with typed function pointers.
+        </p>
+
+        <p class="pb-8">
+            Generic modules make it easy to create abstract data types 
+            and functions, and you can expand this capability to compile-time 
+            reflection with C3's macros.
+        </p>
+
+
+        
+    </div>
+
+    
+    <div class="
+        py-12
+        -mx-8
+        lg:mx-0
+        lg:col-start-6
+        lg:col-span-7
+        
+    ">
+
+        <div class="
+            w-full
+            h-[35rem]
+            bg-[url('/vkquake.jpg')]
+            dark:brightness-90
+            brightness-125
+            bg-no-repeat
+            bg-center
+            bg-cover
+            z-10"
+        />
+        
+    </div>
+
+</div>
+
+
+<!-- Features block -->
+<div class="
+    grid
+    grid-cols-1
+    lg:grid-cols-12
+    dark:text-gray-200
+    p-12
+    rounded-sm
+    bg-[hsl(228,13%,92%)]
+    dark:bg-[hsl(223,13%,22%)]
+    "
+>
+    <div class="
+        lg:row-start-1
+        lg:col-start-8
+        lg:col-span-5
+        flex
+        flex-col
+        justify-center
+        
+        md:p-12
+        lg:pl-24
+    ">
+        <h1 class="
+            text-3xl
+            md:text-4xl
+            font-bold
+            dark:text-gray-100
+            py-12
+            "
+        >
+        Packaged Libraries
+        </h1>
+
+        <p class="pb-8">
+            <a class="
+                font-semibold 
+                hover:text-blue-500 
+                hover:underline" 
+                href="https://github.com/c3lang/vendor"
+            >
+                Vendor
+            </a> 
+            is a collection of C libraries packaged for use in C3, which can be fetched 
+            conveniently by the <b>c3c vendor-fetch</b> command.
+        </p>
+
+        <p class="pb-8">
+            More packages are available in the C3 ecosystem.
+        </p>
+
+        <p class="pb-8">
+            You can however use C libraries directly without a 
+            C3 wrapper because C3 is 100% C ABI compatible. 
+            The main benefit of a C3 wrapper is to use more C3 specific features and safety.
+        </p>
+
+    </div>
+
+    
+    <div class="
+        py-12
+        -mx-8
+        lg:mx-0
+        lg:col-start-1
+        lg:col-span-7
+        grid
+        grid-cols-3
+        grid-rows-2
+        gap-4
+        md:gap-10
+    ">
+
+        <div class="
+            col-span-3
+            bg-gray-50
+            dark:bg-black
+            border-2
+            border-gray-400
+            dark:border-gray-500
+
+            grid
+            grid-rows-2
+            grid-cols-3
+            gap-x-4
+            md:gap-x-10
+        ">
+            <h3 class="
+                col-span-3
+                font-bold
+                text-xl
+                md:text-2xl
+                flex
+                flex-col
+                items-center
+                justify-center
+            ">
+                Graphics Libraries
+            </h3>
+
+            <div class="
+                col-span-1
+                p-4
+                lg:p-12
+            ">
+                <div class="
+                    col-span-3
+                    text-lg
+                    flex
+                    flex-col
+                    items-center
+                    justify-center
+                ">
+                    <a class="
+                        font-semibold 
+                        hover:text-blue-500
+                        hover:underline
+                        " 
+                        href="https://github.com/c3lang/vendor/tree/main/libraries/raylib5.c3l"
+                    >
+                        Raylib
+                    </a>
+
+                    <a class="
+                        font-semibold 
+                        hover:text-blue-500
+                        hover:underline
+                        " 
+                        href="https://github.com/c3lang/vendor/tree/main/libraries/sdl2.c3l"
+                    >
+                        SDL
+                    </a>
+
+                </div>
+
+            </div>  
+
+            <div class="
+                col-span-1
+                p-4
+                lg:p-12
+            ">
+                <div class="
+                    col-span-3
+                    text-lg
+                    flex
+                    flex-col
+                    items-center
+                    justify-center
+                ">
+
+                    <a class="
+                        font-semibold 
+                        hover:text-blue-500
+                        hover:underline
+                        " 
+                        href="https://github.com/c3lang/vendor/tree/main/libraries/opengl.c3l"
+                    >
+                        OpenGL
+                    </a>
+
+                    <a class="
+                        font-semibold 
+                        hover:text-blue-500
+                        hover:underline
+                        " 
+                        href="https://github.com/c3lang/vendor/tree/main/libraries/vulkan.c3l"
+                    >
+                        Vulkan
+                    </a>
+
+                </div>
+
+            </div>  
+
+            <div class="
+                col-span-1
+                p-4
+                lg:p-12
+            ">
+                <div class="
+                    col-span-3
+                    text-lg
+                    flex
+                    flex-col
+                    items-center
+                    justify-center
+                ">
+                    <a class="
+                        font-semibold 
+                        hover:text-blue-500
+                        hover:underline
+                        " 
+                        href="https://github.com/c3lang/vendor/tree/main/libraries/glfw.c3l"
+                    >
+                        GLFW
+                    </a>
+
+                    <a class="
+                        font-semibold 
+                        hover:text-blue-500
+                        hover:underline
+                        " 
+                        href="https://github.com/c3lang/vendor/tree/main/libraries/webgpu.c3l"
+                    >
+                        WebGPU
+                    </a>
+
+                </div>
+
+            </div>  
+
+        </div>
+
+
+        <div class="
+            col-span-1
+            bg-gray-50
+            dark:bg-black
+            border-2
+            border-gray-400
+            dark:border-gray-500
+            p-12
+            grid
+            grid-rows-2
+            grid-cols-3
+        ">
+            <h3 class="
+                col-span-full
+                font-bold
+                text-xl
+                md:text-2xl
+                flex
+                flex-col
+                items-center
+                justify-center
+            ">
+                GUI
+            </h3>
+
+            <div class="
+                col-span-full
+                text-lg
+                flex
+                flex-col
+                items-center
+                justify-center
+            ">
+                <a class="
+                    font-semibold 
+                    hover:text-blue-500
+                    hover:underline
+                    " 
+                    href="https://github.com/c3lang/vendor/tree/main/libraries/tigr.c3l"
+                >
+                    Tigr
+                </a>
+
+            </div>
+
+        </div>
+
+        <div class="
+            col-span-1
+            bg-gray-50
+            dark:bg-black
+            border-2
+            border-gray-400
+            dark:border-gray-500
+            p-12
+            grid
+            grid-rows-2
+            grid-cols-3
+        ">
+            <h3 class="
+                col-span-3
+                font-bold
+                text-xl
+                md:text-2xl
+                flex
+                flex-col
+                items-center
+                justify-center
+            ">
+                Parsing
+            </h3>
+
+            <div class="
+                col-span-3
+                text-lg
+                flex
+                flex-col
+                items-center
+                justify-center
+            ">
+                <a class="
+                    font-semibold 
+                    hover:text-blue-500
+                    hover:underline
+                    " 
+                    href="https://github.com/c3lang/vendor/tree/main/libraries/tree_sitter.c3l"
+                >
+                    Treesitter
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="
+            col-span-1
+            bg-gray-50
+            dark:bg-black
+            border-2
+            border-gray-400
+            dark:border-gray-500
+            p-12
+            grid
+            grid-rows-2
+            grid-cols-3
+        ">
+            <h3 class="
+                col-span-3
+                font-bold
+                text-xl
+                md:text-2xl
+                flex
+                flex-col
+                items-center
+                justify-center
+            ">
+                Web
+            </h3>
+
+            <div class="
+                col-span-3
+                text-lg
+                flex
+                flex-col
+                items-center
+                justify-center
+            ">
+                <a class="
+                    font-semibold 
+                    hover:text-blue-500
+                    hover:underline
+                    " 
+                    href="https://github.com/c3lang/vendor/tree/main/libraries/curl.c3l"
+                >
+                    Curl
+                </a>
+            </div>
+
+        </div>       
+            
+    </div>
+
+</div>
+
+<!-- Features block -->
+<div class="
+    grid
+    grid-rows-2
+
+    dark:text-gray-200
+    md:p-24
+    py-24
+    px-8
+    rounded-sm
+    bg-gray-50
+    dark:bg-[hsl(224,12%,4%)]
+    "
+>
+    <div class="
+        md:flex 
+        md:items-center
+        md:justify-center
+        "
+    >
+        <a
+            class="
+                flex
+                justify-center
+                items-center
+                gap-x-3 
+                text-center
+                bg-blue-600
+                border-blue-600
+                hover:border-slate-950
+                border-2
+                rounded-md
+                py-3
+                px-2
+                md:px-14
+                shadow-sm
+                focus:z-10
+                focus:outline-none focus:ring-2 dark:focus:ring-blue-200 focus:ring-blue-800 focus:ring-offset-2 focus:ring-offset-white dark:focus:ring-offset-stone-950
+                transition-all
+                text-white
+                font-medium
+                select-none
+                dark:bg-blue-600
+                dark:hover:border-blue-500
+                dark:border-blue-600
+                dark:text-white"
+            href="/getting-started/"
+        >
+            Get Started
+            <svg
+                class="w-3 h-3 ml-2"
+                viewBox="0 0 16 16"
+                fill="none"
+            >
+            <path
+                d="M5.27921 2L10.9257 7.64645C11.1209 7.84171 11.1209 8.15829 10.9257 8.35355L5.27921 14"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"></path>
+            </svg>
+        </a>
+    </div>
+
+    <div class="
+        flex
+        items-center
+        justify-center
+        text-2xl
+        md:text-3xl
+        font-bold
+        pt-8
+    ">
+        Get Involved
+    </div>
+
+    <div class="
+        flex
+        items-center
+        justify-center
+    ">
+        <div class="
+            grid
+            grid-cols-3
+            lg:pb-12
+            pb-8
+            pt-6
+        ">
+
+            <!-- ================================= -->
+
+            <!-- Github Icon -->
+            <a class="
+                px-4
+                flex
+                flex-col
+                items-center
+                justify-center
+                justify-items-center
+                
+                hover:fill-blue-500
+                hover:text-blue-500
+                dark:hover:fill-blue-400
+                dark:fill-white
+                dark:hover:text-blue-400
+                w-full
+                h-full"
+                href="https://github.com/c3lang/c3c/discussions"
+            > 
+
+                <svg
+                    class="ml-1 h-12"
+                    viewBox="0 0 100 96.36"
+                    xmlns="http://www.w3.org/2000/svg"
+                >
+                    <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M48.854 0C21.839 0 0 22 0 49.217c0 21.756 13.993 40.172 33.405 46.69 2.427.49 3.316-1.059 3.316-2.362 0-1.141-.08-5.052-.08-9.127-13.59 2.934-16.42-5.867-16.42-5.867-2.184-5.704-5.42-7.17-5.42-7.17-4.448-3.015.324-3.015.324-3.015 4.934.326 7.523 5.052 7.523 5.052 4.367 7.496 11.404 5.378 14.235 4.074.404-3.178 1.699-5.378 3.074-6.6-10.839-1.141-22.243-5.378-22.243-24.283 0-5.378 1.94-9.778 5.014-13.2-.485-1.222-2.184-6.275.486-13.038 0 0 4.125-1.304 13.426 5.052a46.97 46.97 0 0 1 12.214-1.63c4.125 0 8.33.571 12.213 1.63 9.302-6.356 13.427-5.052 13.427-5.052 2.67 6.763.97 11.816.485 13.038 3.155 3.422 5.015 7.822 5.015 13.2 0 18.905-11.404 23.06-22.324 24.283 1.78 1.548 3.316 4.481 3.316 9.126 0 6.6-.08 11.897-.08 13.526 0 1.304.89 2.853 3.316 2.364 19.412-6.52 33.405-24.935 33.405-46.691C97.707 22 75.788 0 48.854 0z"
+                    ></path>
+                </svg>
+            
+
+                <p class="
+                    py-3
+                ">
+                    Github
+                </p>
+                
+            </a>
+
+            <!-- ================================= -->
+
+            <!-- Discourse Icon -->
+            <a class="
+                px-4
+                flex
+                flex-col
+                items-center
+                justify-center
+                justify-items-center
+                
+                hover:fill-blue-500
+                hover:text-blue-500
+                dark:hover:fill-blue-400
+                dark:fill-white
+                dark:hover:text-blue-400
+                w-full
+                h-full"
+                href="https://c3lang.discourse.group/"
+            > 
+                <svg
+                    class="ml-1 h-12"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    role="img"
+                >
+                    <path
+                        d="M12.103 0C18.666 0 24 5.485 24 11.997c0 6.51-5.33 11.99-11.9 11.99L0 24V11.79C0 5.28 5.532 0 12.103 0zm.116 4.563a7.395 7.395 0 0 0-6.337 3.57 7.247 7.247 0 0 0-.148 7.22L4.4 19.61l4.794-1.074a7.424 7.424 0 0 0 8.136-1.39 7.256 7.256 0 0 0 1.737-7.997 7.375 7.375 0 0 0-6.84-4.585h-.008z"
+                    ></path>
+                </svg>
+
+                <p class="
+                    py-3
+                ">
+                    Forums
+                </p>
+            </a>
+
+            <!-- ================================= -->
+
+            <!-- Discord -->
+            <a class="
+                px-4
+                flex
+                flex-col
+                items-center
+                justify-center
+                justify-items-center
+                
+                hover:fill-blue-500
+                hover:text-blue-500
+                dark:hover:fill-blue-400
+                dark:fill-white
+                dark:hover:text-blue-400
+                w-full
+                h-full"
+                href="https://discord.gg/qN76R87"
+            >            
+                <svg
+                    class="h-12"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 127.14 96.36"
+                >
+                    <path
+                        d="M107.7,8.07A105.15,105.15,0,0,0,81.47,0a72.06,72.06,0,0,0-3.36,6.83A97.68,97.68,0,0,0,49,6.83,72.37,72.37,0,0,0,45.64,0,105.89,105.89,0,0,0,19.39,8.09C2.79,32.65-1.71,56.6.54,80.21h0A105.73,105.73,0,0,0,32.71,96.36,77.7,77.7,0,0,0,39.6,85.25a68.42,68.42,0,0,1-10.85-5.18c.91-.66,1.8-1.34,2.66-2a75.57,75.57,0,0,0,64.32,0c.87.71,1.76,1.39,2.66,2a68.68,68.68,0,0,1-10.87,5.19,77,77,0,0,0,6.89,11.1A105.25,105.25,0,0,0,126.6,80.22h0C129.24,52.84,122.09,29.11,107.7,8.07ZM42.45,65.69C36.18,65.69,31,60,31,53s5-12.74,11.43-12.74S54,46,53.89,53,48.84,65.69,42.45,65.69Zm42.24,0C78.41,65.69,73.25,60,73.25,53s5-12.74,11.44-12.74S96.23,46,96.12,53,91.08,65.69,84.69,65.69Z"
+                    ></path>
+                </svg>
+
+                <p class="
+                    py-3
+                ">
+                    Discord
+                </p>
+                    
+            </a>
+
+            <!-- ================================= -->
+
+
+
+        </div>
+    </div>
+    
+
+
+</div>
+
+

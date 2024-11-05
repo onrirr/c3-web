@@ -1,0 +1,43 @@
+---
+import Hero from "../components/hero.astro";
+import Sample from "../components/sample.astro";
+import Features from "../components/features.astro";
+import Community from "../components/community.astro";
+---
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width" />
+  <meta
+    name="description"
+    content="C3 is a programming language that builds on the syntax and semantics of the C language, with the goal of evolving it while still retaining familiarity for C programmers."
+  />
+  <meta name="og:title" content="C3" />
+  <meta
+    name="og:description"
+    content="C3 is a programming language that builds on the syntax and semantics of the C language, with the goal of evolving it while still retaining familiarity for C programmers."
+  />
+  <meta content="/logo.svg" property="og:image" />
+  <meta content="#4355ec" data-react-helmet="true" name="theme-color" />
+  <meta name="og:image" content="/logo.svg" />
+
+  <link rel="icon" href="/ico.svg" type="image/x-icon" />
+
+  <title>C3 | An evolution, not a revolution</title>
+  <script>
+    import "boxicons";
+    import "../../public/preline.min.js";
+    import "../../public/overlay.min.js";
+    import "../base.css";
+  </script>
+</head>
+
+<body class="dark:bg-stone-950 bg-white">
+  <div style="height: auto">
+    <Hero />
+    <Sample />
+    <Features />
+    <Community />
+  </div>
+  <link rel="stylesheet" href="/index.css" />
+</body>
