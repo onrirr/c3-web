@@ -5,6 +5,10 @@ import fs from "node:fs"
 
 // https://astro.build/config
 export default defineConfig({
+  i18n: {
+    defaultLocale: "en",
+    locales: ["en"],
+  },
   site: "https://c3-lang.org",
   redirects: {
     '/guide': '/getting-started',
