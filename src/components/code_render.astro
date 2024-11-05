@@ -30,6 +30,7 @@ let desktop_code_html = highlighter.codeToHtml(
 
 
 // Post-process the code-formatter output to link it to standard Tailwind classes
+// This is so that darkmode works as expected
 function processHtml(input) {
 
     // remove the background
@@ -121,6 +122,7 @@ desktop_code_html = processHtml(desktop_code_html)
     md:p-8
     `
     id=`${name}_mobile_code`
+    aria-label="C3 example code, mobile variant"
 >
     <Fragment set:html={mobile_code_html} />
 </div>
@@ -135,6 +137,7 @@ desktop_code_html = processHtml(desktop_code_html)
     xl:p-12
     `
     id=`${name}_desktop_code`
+    aria-label="C3 example code, desktop variant"
 >
     <Fragment set:html={desktop_code_html} />
 </div>
