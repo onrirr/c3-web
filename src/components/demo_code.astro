@@ -40,7 +40,6 @@ import CodeRender from "./code_render.astro";
                 // remove any style adjustments from previous tab was selected
                 if (event.target.id != localStorage[localStorageKey]) {
 
-
                     let previousTabElement = document.getElementById(localStorage[localStorageKey]);
 
                     // adjust styles showing new tab is selected
@@ -75,8 +74,6 @@ import CodeRender from "./code_render.astro";
             // Changing the button properties on click
             event.target.classList.remove("bg-gray-100");
             event.target.classList.remove("dark:bg-gray-900");
-        
-        
 
             event.target.classList.add("dark:bg-blue-600");
             event.target.classList.add("bg-blue-500");      
@@ -86,9 +83,6 @@ import CodeRender from "./code_render.astro";
             event.target.classList.remove("hover:text-blue-500");
             event.target.classList.add("dark:text-white");
             event.target.classList.add("text-white");
-            
-            
-            
             
 
             // storing which button was clicked
