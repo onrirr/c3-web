@@ -14,10 +14,9 @@ interface Props {
             mobile_code: string;
         }[];
     highlighter: HighlighterGeneric<BundledLanguage, BundledTheme>
-    height: string;
 }
 
-const { height, buttons, code, highlighter } = Astro.props;
+const { buttons, code, highlighter } = Astro.props;
 
 import CodeRender from "./code_render.astro";
 
@@ -212,7 +211,7 @@ import CodeRender from "./code_render.astro";
 
     <!-- Code container -->
     <div class=`
-        ${height}
+        
         flex
         flex-col
         justify-start 
