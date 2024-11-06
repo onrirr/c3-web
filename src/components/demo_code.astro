@@ -178,11 +178,37 @@ import CodeRender from "./code_render.astro";
     md:grid-cols-${buttons.length}
     md:grid-cols-1
 
-    gap-2
+    gap-4
     
     dark:text-gray-200
     md:mx-0
 `>
+
+    <!--  Buttons -->
+    {buttons.map((item, index) => (
+        <button class=`
+            
+            rounded-lg
+            p-3
+            mb-4
+            border-2
+            border-blue-500
+            dark:border-blue-500
+            flex
+            justify-center
+            items-center
+            
+            ${index ===0 && "dark:text-white text-white bg-blue-600"}
+            ${index != 0 && "dark:text-white hover:text-blue-500 dark:hover:text-blue-500 bg-gray-100 dark:bg-gray-900"}
+            `
+            id={item}
+            role="button"
+            aria-label="show a code example, the button id is the example code title"
+            
+        >
+            {item}
+        </button>
+    ))}
 
     <!-- Code container -->
     <div class=`
@@ -191,7 +217,7 @@ import CodeRender from "./code_render.astro";
         flex-col
         justify-start 
         lg:items-start
-        items-end
+        items-start
         col-span-2
         
         md:col-span-4
@@ -225,31 +251,7 @@ import CodeRender from "./code_render.astro";
 
 
     
-    <!--  Buttons -->
-    {buttons.map((item, index) => (
-        <button class=`
-
-            rounded-lg
-            p-3
-            mt-4
-            border-2
-            border-blue-500
-            dark:border-blue-500
-            flex
-            justify-center
-            items-center
-            
-            ${index ===0 && "dark:text-white text-white bg-blue-600"}
-            ${index != 0 && "dark:text-white hover:text-blue-500 dark:hover:text-blue-500 bg-gray-100 dark:bg-gray-900"}
-            `
-            id={item}
-            role="button"
-            aria-label="show a code example, the button id is the example code title"
-            
-        >
-            {item}
-        </button>
-    ))}
+    
 
 </div>
 
