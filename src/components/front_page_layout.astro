@@ -832,8 +832,8 @@ await setTimeout(highlighter.dispose, 2000)
     2xl:px-24
     dark:text-gray-200
     p-12
-    rounded-sm
     bg-gray-50
+    from
     dark:bg-[hsl(224,12%,4%)]
 "
 >
@@ -908,7 +908,6 @@ await setTimeout(highlighter.dispose, 2000)
     2xl:px-24
     dark:text-gray-200
     p-12
-    rounded-sm
     bg-[hsl(228,13%,92%)]
     dark:bg-[hsl(223,13%,22%)]
     "
@@ -993,7 +992,6 @@ await setTimeout(highlighter.dispose, 2000)
     2xl:px-24
     dark:text-gray-200
     p-12
-    rounded-sm
     bg-gray-50
     dark:bg-[hsl(224,12%,4%)]
     "
@@ -1088,7 +1086,6 @@ await setTimeout(highlighter.dispose, 2000)
     2xl:px-24
     dark:text-gray-200
     p-12
-    rounded-sm
     bg-[hsl(228,13%,92%)]
     dark:bg-[hsl(223,13%,22%)]
     "
@@ -1157,19 +1154,32 @@ await setTimeout(highlighter.dispose, 2000)
         md:gap-10
     ">
 
+    <!-- bg-gray-50
+            dark:bg-[hsl(224,12%,12%)]
+            border-2
+            border-gray-300
+            dark:border-gray-600 -->
         <div class="
             col-span-3
-            bg-gray-50
-            dark:bg-black
+
+            bg-gradient-to-t
+            dark:from-[hsl(224,12%,10%)]
+            dark:to-[hsl(224,12%,12%)]
+            from-gray-200
+            to-gray-50
             border-2
-            border-gray-400
-            dark:border-gray-500
+            border-gray-300
+            dark:border-gray-600
+            rounded-xl
+            md:rounded-2xl
+            shadow-lg
 
             grid
-            grid-rows-2
+            grid-rows-1
             grid-cols-3
             gap-x-4
             md:gap-x-10
+            p-4
         ">
             <h2 class="
                 col-span-3
@@ -1180,14 +1190,14 @@ await setTimeout(highlighter.dispose, 2000)
                 flex-col
                 items-center
                 justify-center
+                pb-4
             ">
                 Graphics Libraries
             </h2>
 
             <div class="
                 col-span-1
-                p-4
-                lg:p-12
+                
             ">
                 <div class="
                     col-span-3
@@ -1201,6 +1211,7 @@ await setTimeout(highlighter.dispose, 2000)
                         font-semibold 
                         hover:text-blue-500
                         hover:underline
+                        pb-4
                         " 
                         href="https://github.com/c3lang/vendor/tree/main/libraries/raylib5.c3l"
                         aria-label="C3 Raylib module"
@@ -1212,6 +1223,7 @@ await setTimeout(highlighter.dispose, 2000)
                         font-semibold 
                         hover:text-blue-500
                         hover:underline
+                        pb-4
                         " 
                         href="https://github.com/c3lang/vendor/tree/main/libraries/sdl2.c3l"
                         aria-label="C3 SDL module"
@@ -1225,8 +1237,7 @@ await setTimeout(highlighter.dispose, 2000)
 
             <div class="
                 col-span-1
-                p-4
-                lg:p-12
+                
             ">
                 <div class="
                     col-span-3
@@ -1241,6 +1252,7 @@ await setTimeout(highlighter.dispose, 2000)
                         font-semibold 
                         hover:text-blue-500
                         hover:underline
+                        pb-4
                         " 
                         href="https://github.com/c3lang/vendor/tree/main/libraries/opengl.c3l"
                         aria-label="C3 OpenGL module"
@@ -1252,6 +1264,7 @@ await setTimeout(highlighter.dispose, 2000)
                         font-semibold 
                         hover:text-blue-500
                         hover:underline
+                        pb-4
                         " 
                         href="https://github.com/c3lang/vendor/tree/main/libraries/vulkan.c3l"
                         aria-label="C3 Vulkan module"
@@ -1265,8 +1278,6 @@ await setTimeout(highlighter.dispose, 2000)
 
             <div class="
                 col-span-1
-                p-4
-                lg:p-12
             ">
                 <div class="
                     col-span-3
@@ -1280,6 +1291,7 @@ await setTimeout(highlighter.dispose, 2000)
                         font-semibold 
                         hover:text-blue-500
                         hover:underline
+                        pb-4
                         " 
                         href="https://github.com/c3lang/vendor/tree/main/libraries/glfw.c3l"
                         aria-label="C3 GLFW module"
@@ -1291,6 +1303,7 @@ await setTimeout(highlighter.dispose, 2000)
                         font-semibold 
                         hover:text-blue-500
                         hover:underline
+                        pb-4
                         " 
                         href="https://github.com/c3lang/vendor/tree/main/libraries/webgpu.c3l"
                         aria-label="C3 WebGPU module"
@@ -1307,12 +1320,19 @@ await setTimeout(highlighter.dispose, 2000)
 
         <div class="
             col-span-1
-            bg-gray-50
-            dark:bg-black
+
+            bg-gradient-to-t
+            dark:from-[hsl(224,12%,10%)]
+            dark:to-[hsl(224,12%,12%)]
+            from-gray-200
+            to-gray-50
             border-2
-            border-gray-400
-            dark:border-gray-500
-            p-12
+            border-gray-300
+            dark:border-gray-600
+            rounded-xl
+            md:rounded-2xl
+            shadow-lg
+      
             grid
             grid-rows-2
             grid-cols-3
@@ -1342,6 +1362,7 @@ await setTimeout(highlighter.dispose, 2000)
                     font-semibold 
                     hover:text-blue-500
                     hover:underline
+                    pb-4
                     " 
                     href="https://github.com/c3lang/vendor/tree/main/libraries/tigr.c3l"
                     aria-label="C3 Tigr module"
@@ -1355,12 +1376,19 @@ await setTimeout(highlighter.dispose, 2000)
 
         <div class="
             col-span-1
-            bg-gray-50
-            dark:bg-black
+            
+            bg-gradient-to-t
+            dark:from-[hsl(224,12%,10%)]
+            dark:to-[hsl(224,12%,12%)]
+            from-gray-200
+            to-gray-50
             border-2
-            border-gray-400
-            dark:border-gray-500
-            p-12
+            border-gray-300
+            dark:border-gray-600
+            rounded-xl
+            md:rounded-2xl
+            shadow-lg
+
             grid
             grid-rows-2
             grid-cols-3
@@ -1390,6 +1418,7 @@ await setTimeout(highlighter.dispose, 2000)
                     font-semibold 
                     hover:text-blue-500
                     hover:underline
+                    pb-4
                     " 
                     href="https://github.com/c3lang/vendor/tree/main/libraries/tree_sitter.c3l"
                     aria-label="C3 Treesitter module"
@@ -1404,12 +1433,19 @@ await setTimeout(highlighter.dispose, 2000)
 
         <div class="
             col-span-1
-            bg-gray-50
-            dark:bg-black
+
+            bg-gradient-to-t
+            dark:from-[hsl(224,12%,10%)]
+            dark:to-[hsl(224,12%,12%)]
+            from-gray-200
+            to-gray-50
             border-2
-            border-gray-400
-            dark:border-gray-500
-            p-12
+            border-gray-300
+            dark:border-gray-600
+            rounded-xl
+            md:rounded-2xl
+            shadow-lg
+
             grid
             grid-rows-2
             grid-cols-3
@@ -1439,6 +1475,7 @@ await setTimeout(highlighter.dispose, 2000)
                     font-semibold 
                     hover:text-blue-500
                     hover:underline
+                    pb-4
                     " 
                     href="https://github.com/c3lang/vendor/tree/main/libraries/curl.c3l"
                     aria-label="C3 Curl module"
@@ -1462,7 +1499,6 @@ await setTimeout(highlighter.dispose, 2000)
     md:p-24
     py-24
     px-8
-    rounded-sm
     bg-gray-50
     dark:bg-[hsl(224,12%,4%)]
     "
