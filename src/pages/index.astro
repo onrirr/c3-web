@@ -32,63 +32,11 @@ import Layout from "../components/front_page_layout.astro";
 </head>
 
 
-<div class="
-    grid
-    grid-cols-[minmax(0,1fr)_minmax(0,1536px)_minmax(0,1fr)]
-    
-    bg-gradient-to-tr
-    dark:from-[hsl(224,12%,10%)]
-    dark:to-[hsl(224,12%,25%)]
-    from-[hsl(224,12%,70%)]
-    to-[hsl(224,12%,95%)]
-    "
->
+<body class="">
+        <div >
+            <Layout/>
+        </div>
+    <link rel="stylesheet" href="/index.css" />
+</body>
 
-    <div class="row-start-1 col-start-1 col-span-1 row-span-full">
-        <div class="
-            h-[3.5rem]
-            md:sticky
-            md:top-0
-            md:z-50
 
-            bg-white
-            dark:bg-[hsl(224,12%,4%)]
-            border-b-2
-            border-b-gray-200
-            dark:border-b-gray-800
-        "/>
-        <div class="row-span-1 h-[24rem]"/>
-    </div>
-
-    
-
-    <body class="
-        col-start-2
-        col-span-1
-        row-span-full
-    ">
-            <div >
-                <Layout/>
-            </div>
-        <link rel="stylesheet" href="/index.css" />
-    </body>
-
-   
-    <div class="row-start-1 col-start-3 col-span-1 row-span-full">
-        <div class="
-            h-[3.5rem]
-            md:sticky
-            md:top-0
-            md:z-50
-
-            bg-white
-            dark:bg-[hsl(224,12%,4%)]
-            border-b-2
-            border-b-gray-200
-            dark:border-b-gray-800
-        "/>
-        <div class="row-span-1 h-[24rem]"/>
-    </div>
-
-    
-</div>
