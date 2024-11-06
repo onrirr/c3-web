@@ -1085,7 +1085,7 @@ await setTimeout(highlighter.dispose, 2000)
 </div>
 
 
-<!-- Features block -->
+<!-- Packaged Libraries -->
 <div class="
     grid
     grid-cols-1
@@ -1140,7 +1140,7 @@ await setTimeout(highlighter.dispose, 2000)
             More packages are available in the C3 ecosystem.
         </p>
 
-        <p class="pb-8">
+        <p class="pb-12 lg:pb-0">
             You can however use C libraries directly without a 
             C3 wrapper because C3 is 100% C ABI compatible. 
             The main benefit of a C3 wrapper is to use more C3 specific features and safety.
@@ -1159,14 +1159,27 @@ await setTimeout(highlighter.dispose, 2000)
 </div>
 
 
-<!-- Features block -->
+
+
+<!-- C3 Full Features grid -->
+<div class="
+    bg-gray-50
+    dark:bg-[hsl(224,12%,4%)]
+">
+
+    <Features/>
+</div>
+
+
+<!-- Call to Action -->
 <div class="
     grid
     grid-rows-2
 
     dark:text-gray-200
     md:p-24
-    py-24
+    py-16
+    md:py-24
     px-8
     bg-[hsl(228,13%,92%)]
     dark:bg-[hsl(223,13%,22%)]
@@ -1176,8 +1189,6 @@ await setTimeout(highlighter.dispose, 2000)
         md:flex 
         md:items-center
         md:justify-center
-        md:pt-12
-        md:pb-4
         "
     >
         <a class="
@@ -1228,10 +1239,10 @@ await setTimeout(highlighter.dispose, 2000)
         flex
         items-center
         justify-center
-        text-2xl
-        md:text-3xl
+        text-xl
+        md:text-2xl
         font-bold
-        pt-8
+        pt-12
     ">
         Get Involved
     </h2>
@@ -1245,7 +1256,6 @@ await setTimeout(highlighter.dispose, 2000)
             grid
             grid-cols-3
             lg:pb-12
-            pb-8
             pt-6
         ">
 
@@ -1379,16 +1389,6 @@ await setTimeout(highlighter.dispose, 2000)
         </div>
     </div>
     
-</div>
-
-
-<!-- C3 Full Features grid -->
-<div class="
-    bg-gray-50
-    dark:bg-[hsl(224,12%,4%)]
-">
-
-    <Features/>
 </div>
 
 
