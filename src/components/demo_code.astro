@@ -33,9 +33,9 @@ import CodeRender from "./code_render.astro";
         return function buttonClickHandler(event) {
 
             if (
-                localStorage[localStorageKey] != "" &&
                 localStorage[localStorageKey] != null &&
-                localStorage[localStorageKey] != undefined
+                localStorage[localStorageKey] != undefined &&
+                localStorage[localStorageKey] != ""
             ) {
                 // remove any style adjustments from previous tab was selected
                 if (event.target.id != localStorage[localStorageKey]) {
@@ -110,7 +110,12 @@ import CodeRender from "./code_render.astro";
     //========================================
     // Setup for "Ergonomics & Safety"
     const ergoLocalStorageKey ="ergonomics_and_safety_selected_tab_id";
-    const ergoButtons = ["Optionals", "Defer", "Slices", "Contracts"]
+    const ergoButtons = [
+        "Optionals", 
+        "Defer", 
+        "Slices", 
+        "Contracts",
+    ]
     const ergoHandler = generateClickHandler(ergoLocalStorageKey);
 
     ergoButtons.forEach(buttonName => {
@@ -123,7 +128,7 @@ import CodeRender from "./code_render.astro";
     //========================================
     // Performance By Default
 
-    const perfLocalStorageKey = "perf_by_default_selected_tab_id";
+    const perfLocalStorageKey = "perf_selected_tab_id";
 
     const perfButtons = [
         "Temp Allocator",
@@ -142,9 +147,9 @@ import CodeRender from "./code_render.astro";
     localStorage[perfLocalStorageKey] = perfButtons[0];
 
     //========================================
-    // Batteries Included Standard Library
+    // Performance
 
-    const stdLibLocalStorageKey = "perf_by_default_selected_tab_id";
+    const stdLibLocalStorageKey = "perf_selected_tab_id";
 
     const stdLibButtons = [
         "Containers",
@@ -195,9 +200,12 @@ import CodeRender from "./code_render.astro";
         w-full
         overflow-x-auto
         bg-white
-        dark:bg-gradient-to-tr
-        dark:from-[hsl(224,12%,10%)]
-        dark:to-[hsl(224,12%,12%)]
+        dark:bg-[hsl(224,12%,10%)]
+        shadow-md
+        dark:shadow-none
+        dark:ring
+        dark:ring-2
+        dark:ring-[hsl(224,12%,12%)]
         `
     >
 
