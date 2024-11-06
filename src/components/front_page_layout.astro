@@ -1,6 +1,7 @@
 ---
 import DemoCode from "./demo_code.astro"
 import Features from "./features.astro"
+import PackagedLibraries from "./packaged_libraries.astro"
 
 //=======================================
 // Code highlighting
@@ -1147,344 +1148,16 @@ await setTimeout(highlighter.dispose, 2000)
 
     </div>
 
-    
+
     <div class="
-        py-12
-        -mx-8
-        lg:mx-0
         lg:col-start-1
         lg:col-span-7
-        grid
-        grid-cols-3
-        grid-rows-2
-        gap-4
-        md:gap-10
     ">
-
-
-        <div class="
-            col-span-3
-
-            dark:bg-[hsl(224,12%,10%)]
-            bg-gray-50
-            border-2
-            border-gray-300
-            dark:border-gray-600
-            rounded-md
-            shadow-md
-
-            grid
-            grid-rows-1
-            grid-cols-3
-            gap-x-4
-            md:gap-x-10
-            p-4
-        ">
-            <h2 class="
-                col-span-3
-                font-bold
-                text-xl
-                md:text-2xl
-                flex
-                flex-col
-                items-center
-                justify-center
-                pb-8
-            ">
-                Graphics Libraries
-            </h2>
-
-            <div class="
-                col-span-1
-                
-            ">
-                <div class="
-                    col-span-3
-                    text-lg
-                    flex
-                    flex-col
-                    items-center
-                    justify-center
-                ">
-                    <a class="
-                        font-semibold 
-                        text-blue-500
-                        hover:underline
-                        pb-4
-                        " 
-                        href="https://github.com/c3lang/vendor/tree/main/libraries/raylib5.c3l"
-                        aria-label="C3 Raylib module"
-                    >
-                        Raylib
-                    </a>
-
-                    <a class="
-                        font-semibold 
-                        text-blue-500
-                        hover:underline
-                        pb-4
-                        " 
-                        href="https://github.com/c3lang/vendor/tree/main/libraries/sdl2.c3l"
-                        aria-label="C3 SDL module"
-                    >
-                        SDL
-                    </a>
-
-                </div>
-
-            </div>  
-
-            <div class="
-                col-span-1
-                
-            ">
-                <div class="
-                    col-span-3
-                    text-lg
-                    flex
-                    flex-col
-                    items-center
-                    justify-center
-                ">
-
-                    <a class="
-                        font-semibold 
-                        text-blue-500
-                        hover:underline
-                        pb-4
-                        " 
-                        href="https://github.com/c3lang/vendor/tree/main/libraries/opengl.c3l"
-                        aria-label="C3 OpenGL module"
-                    >
-                        OpenGL
-                    </a>
-
-                    <a class="
-                        font-semibold 
-                        text-blue-500
-                        hover:underline
-                        pb-4
-                        " 
-                        href="https://github.com/c3lang/vendor/tree/main/libraries/vulkan.c3l"
-                        aria-label="C3 Vulkan module"
-                    >
-                        Vulkan
-                    </a>
-
-                </div>
-
-            </div>  
-
-            <div class="
-                col-span-1
-            ">
-                <div class="
-                    col-span-3
-                    text-lg
-                    flex
-                    flex-col
-                    items-center
-                    justify-center
-                ">
-                    <a class="
-                        font-semibold 
-                        text-blue-500
-                        hover:underline
-                        pb-4
-                        " 
-                        href="https://github.com/c3lang/vendor/tree/main/libraries/glfw.c3l"
-                        aria-label="C3 GLFW module"
-                    >
-                        GLFW
-                    </a>
-
-                    <a class="
-                        font-semibold 
-                        text-blue-500
-                        hover:underline
-                        pb-4
-                        " 
-                        href="https://github.com/c3lang/vendor/tree/main/libraries/webgpu.c3l"
-                        aria-label="C3 WebGPU module"
-                    >
-                        WebGPU
-                    </a>
-
-                </div>
-
-            </div>  
-
-        </div>
-
-
-        <div class="
-            col-span-1
-
-            dark:bg-[hsl(224,12%,10%)]
-            bg-gray-50
-            border-2
-            border-gray-300
-            dark:border-gray-600
-            rounded-md
-            shadow-md
-      
-            grid
-            grid-rows-2
-            grid-cols-3
-        ">
-            <h3 class="
-                col-span-full
-                font-bold
-                text-xl
-                md:text-2xl
-                flex
-                flex-col
-                items-center
-                justify-center
-            ">
-                GUI
-            </h3>
-
-            <div class="
-                col-span-full
-                text-lg
-                flex
-                flex-col
-                items-center
-                justify-center
-            ">
-                <a class="
-                    font-semibold 
-                    text-blue-500
-                    hover:underline
-                    pb-4
-                    " 
-                    href="https://github.com/c3lang/vendor/tree/main/libraries/tigr.c3l"
-                    aria-label="C3 Tigr module"
-                >
-                    Tigr
-                </a>
-
-            </div>
-
-        </div>
-
-        <div class="
-            col-span-1
-            
-            dark:bg-[hsl(224,12%,10%)]
-            bg-gray-50
-            border-2
-            border-gray-300
-            dark:border-gray-600
-            rounded-md
-            shadow-md
-
-            grid
-            grid-rows-2
-            grid-cols-3
-        ">
-            <h3 class="
-                col-span-3
-                font-bold
-                text-xl
-                md:text-2xl
-                flex
-                flex-col
-                items-center
-                justify-center
-            ">
-                Parsing
-            </h3>
-
-            <div class="
-                col-span-3
-                text-lg
-                flex
-                flex-col
-                items-center
-                justify-center
-            ">
-                <a class="
-                    font-semibold 
-                    text-blue-500
-                    hover:underline
-                    pb-4
-                    " 
-                    href="https://github.com/c3lang/vendor/tree/main/libraries/tree_sitter.c3l"
-                    aria-label="C3 Treesitter module"
-                >
-                    Treesitter
-                </a>
-
-            </div>
-
-        </div>
-
-
-        <div class="
-            col-span-1
-
-            dark:bg-[hsl(224,12%,10%)]
-            bg-gray-50
-            border-2
-            border-gray-300
-            dark:border-gray-600
-            rounded-md
-            shadow-md
-
-            grid
-            grid-rows-2
-            grid-cols-3
-        ">
-            <h3 class="
-                col-span-3
-                font-bold
-                text-xl
-                md:text-2xl
-                flex
-                flex-col
-                items-center
-                justify-center
-            ">
-                Web
-            </h3>
-
-            <div class="
-                col-span-3
-                text-lg
-                flex
-                flex-col
-                items-center
-                justify-center
-            ">
-                <a class="
-                    font-semibold 
-                    text-blue-500
-                    hover:underline
-                    pb-4
-                    " 
-                    href="https://github.com/c3lang/vendor/tree/main/libraries/curl.c3l"
-                    aria-label="C3 Curl module"
-                >
-                    Curl
-                </a>
-            </div>
-
-        </div>       
-            
+        <PackagedLibraries/>
     </div>
 
 </div>
 
-<div class="
-    bg-gray-50
-    dark:bg-[hsl(224,12%,4%)]
-">
-
-    <Features/>
-
-</div>
 
 <!-- Features block -->
 <div class="
@@ -1706,8 +1379,18 @@ await setTimeout(highlighter.dispose, 2000)
         </div>
     </div>
     
-
-
 </div>
+
+
+<!-- C3 Full Features grid -->
+<div class="
+    bg-gray-50
+    dark:bg-[hsl(224,12%,4%)]
+">
+
+    <Features/>
+</div>
+
+
 
 
