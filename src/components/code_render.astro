@@ -98,15 +98,10 @@ mobile_code_html = processHtml(mobile_code_html)
 ---
 
 
-<!-- Mobile code -->
 <div class=`
-    ${is_default && "flex"}
+    ${is_default && "block"}
     ${!is_default && "hidden"}
-    rounded-md
 
-    p-2
-    sm:p-4
-    md:p-8
     `
     id={name}
     aria-label="C3 example code"

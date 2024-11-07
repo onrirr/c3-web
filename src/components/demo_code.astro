@@ -99,31 +99,45 @@ import CodeRender from "./code_render.astro";
 </script>
 
 
+<div class="
+    mx-3
+    bg-white
+    pt-8
+    
+    rounded-md
+    overflow-clip
 
+    ring-2
+    dark:ring-[hsl(224,12%,12%)]
+    ring-[hsl(224,12%,95%)]
+">
     <form>
         <label 
             class="
-                hidden
+                sr-only
             "
             for={selectID} 
         >
         Choose Code Example
         </label>
 
+
         <select class="
             mx-12
-            flex
+            text-center
             w-[calc(100%-6rem)]
-            lg:mx-0
-            md:w-max
-            pl-6
-            pr-6
-            py-3
 
-            mb-2
+            md:my-1
+            md:mx-8
+            md:text-left
+            md:w-max
+            pr-6
+            pl-4
+
+            py-3
             
             text-black
-            bg-white
+            bg-gray-50
             dark:text-gray-100
             dark:bg-[hsl(224,12%,4%)]
             border-2
@@ -145,6 +159,7 @@ import CodeRender from "./code_render.astro";
 
             {buttons.map((item, index) => (
                 <option class="
+                    
                     "
                     
                     value={item}
@@ -161,27 +176,13 @@ import CodeRender from "./code_render.astro";
 
     <!-- Code container -->
     <div class=`
-        
-        flex
-        flex-col
-        justify-start 
-        lg:items-start
-        items-start
-        col-span-2
-        
-        md:col-span-4
-        grid
-        grid-rows-1
-        w-full
-        overflow-x-auto
         bg-white
+        overflow-x-auto
         dark:bg-[hsl(224,12%,10%)]
-
-        rounded-md
-
-        ring-2
-        dark:ring-[hsl(224,12%,12%)]
-        ring-[hsl(224,12%,95%)]
+        px-4
+        pb-4
+        pt-8
+        lg:p-8
         `
     >
 
