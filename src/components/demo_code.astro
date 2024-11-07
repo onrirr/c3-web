@@ -116,8 +116,8 @@ import CodeRender from "./code_render.astro";
             w-[calc(100%-6rem)]
             lg:mx-0
             md:w-max
-            md:px-10
-            px-10
+            pl-6
+            pr-6
             py-3
             
             mt-4
@@ -129,9 +129,13 @@ import CodeRender from "./code_render.astro";
             mb-6
             border-2
             border-gray-300
+            dark:border-gray-700
         
             rounded-md
-            shadow-md
+
+            ring-2
+            dark:ring-[hsl(224,12%,12%)]
+            ring-[hsl(224,12%,95%)]
             " 
             
             name={selectID} 
@@ -171,12 +175,12 @@ import CodeRender from "./code_render.astro";
         overflow-x-auto
         bg-white
         dark:bg-[hsl(224,12%,10%)]
-        shadow-md
+
         rounded-md
-        dark:shadow-none
-        dark:ring
-        dark:ring-2
+
+        ring-2
         dark:ring-[hsl(224,12%,12%)]
+        ring-[hsl(224,12%,95%)]
         `
     >
 
