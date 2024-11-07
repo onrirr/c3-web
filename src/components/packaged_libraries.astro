@@ -2,20 +2,24 @@
 
 
 <div class="
-    pb-12
-    lg:py-16
+    pb-24
+    px-4
+    lg:pr-12
 
-    md:pr-12
-    md:pl-12
     grid
+    grid-cols-[repeat(1,minmax(0,1fr))]
+    sm:grid-cols-[repeat(2,minmax(0,1fr))]
+    md:grid-cols-[repeat(3,minmax(0,1fr))]
+    justify-center
     lg:grid-cols-3
     2xl:grid-cols-3
 
-    gap-4
+    gap-2
+    lg:gap-4
     text-gray-800 
     dark:text-gray-300
     max-w-screen-xl
-    mx-auto
+    
 ">
 
 
@@ -39,8 +43,7 @@
         href="https://github.com/c3lang/vendor/tree/main/libraries/raylib5.c3l"
         aria-label="C3 Raylib module"
     >
-        <!-- Icon -->
-        <div class="
+        <p class="
             p-2
             lg:mb-4
             lg:mr-0
@@ -51,27 +54,20 @@
             bg-gray-200
             rounded-md
             w-min
+            text-blue-600
+            dark:text-blue-400
+            font-bold
             "
         >
-            <svg class="
-                fill-blue-600
-                dark:fill-blue-400
-                "
-                xmlns="http://www.w3.org/2000/svg" 
-                width="24" 
-                height="24" 
-                viewBox="0 0 24 24"
-            >
-                <path d="M18 15c-.183 0-.358.022-.532.054L8.946 6.532C8.978 6.359 9 6.182 9 6c0-1.654-1.346-3-3-3S3 4.346 3 6c0 1.302.839 2.401 2 2.815v6.369A2.997 2.997 0 0 0 3 18c0 1.654 1.346 3 3 3a2.993 2.993 0 0 0 2.815-2h6.369a2.994 2.994 0 0 0 2.815 2c1.654 0 3-1.346 3-3S19.654 15 18 15zm-11 .184V8.816c.329-.118.629-.291.894-.508l7.799 7.799a2.961 2.961 0 0 0-.508.894h-6.37A2.99 2.99 0 0 0 7 15.184zM6 5a1.001 1.001 0 1 1-1 1c0-.551.448-1 1-1zm0 14a1.001 1.001 0 0 1 0-2 1.001 1.001 0 0 1 0 2zm12 0a1.001 1.001 0 0 1 0-2 1.001 1.001 0 0 1 0 2z"></path>
-            </svg>
-            
-        </div>
+            3D
+        </p>
 
         <h3 class="
             dark:text-gray-100
             font-bold
             text-lg
             2xl:pb-4
+            
             "
         >
             Raylib
@@ -105,8 +101,7 @@
         href="https://github.com/c3lang/vendor/tree/main/libraries/sdl2.c3l"
         aria-label="C3 SDL module"
     >
-        <!-- Icon -->
-        <div class="
+        <p class="
             p-2
             lg:mb-4
             lg:mr-0
@@ -117,20 +112,13 @@
             bg-gray-200
             rounded-md
             w-min
+            text-blue-600
+            dark:text-blue-400
+            font-bold
             "
         >
-            <svg class="
-                fill-blue-600
-                dark:fill-blue-400
-                "
-                xmlns="http://www.w3.org/2000/svg" 
-                width="24" 
-                height="24" 
-                viewBox="0 0 24 24"
-            >
-                <path d="M18 15c-.183 0-.358.022-.532.054L8.946 6.532C8.978 6.359 9 6.182 9 6c0-1.654-1.346-3-3-3S3 4.346 3 6c0 1.302.839 2.401 2 2.815v6.369A2.997 2.997 0 0 0 3 18c0 1.654 1.346 3 3 3a2.993 2.993 0 0 0 2.815-2h6.369a2.994 2.994 0 0 0 2.815 2c1.654 0 3-1.346 3-3S19.654 15 18 15zm-11 .184V8.816c.329-.118.629-.291.894-.508l7.799 7.799a2.961 2.961 0 0 0-.508.894h-6.37A2.99 2.99 0 0 0 7 15.184zM6 5a1.001 1.001 0 1 1-1 1c0-.551.448-1 1-1zm0 14a1.001 1.001 0 0 1 0-2 1.001 1.001 0 0 1 0 2zm12 0a1.001 1.001 0 0 1 0-2 1.001 1.001 0 0 1 0 2z"></path>
-            </svg>
-        </div>
+            3D
+        </p>
 
         <h3 class="
             dark:text-gray-100
@@ -171,8 +159,7 @@
         href="https://github.com/c3lang/vendor/tree/main/libraries/opengl.c3l"
         aria-label="C3 OpenGL module"
     >
-        <!-- Icon -->
-        <div class="
+        <p class="
             p-2
             lg:mb-4
             lg:mr-0
@@ -183,20 +170,13 @@
             bg-gray-200
             rounded-md
             w-min
+            text-blue-600
+            dark:text-blue-400
+            font-bold
             "
         >
-            <svg class="
-                fill-blue-600
-                dark:fill-blue-400
-                "
-                xmlns="http://www.w3.org/2000/svg" 
-                width="24" 
-                height="24" 
-                viewBox="0 0 24 24"
-            >
-                <path d="M18 15c-.183 0-.358.022-.532.054L8.946 6.532C8.978 6.359 9 6.182 9 6c0-1.654-1.346-3-3-3S3 4.346 3 6c0 1.302.839 2.401 2 2.815v6.369A2.997 2.997 0 0 0 3 18c0 1.654 1.346 3 3 3a2.993 2.993 0 0 0 2.815-2h6.369a2.994 2.994 0 0 0 2.815 2c1.654 0 3-1.346 3-3S19.654 15 18 15zm-11 .184V8.816c.329-.118.629-.291.894-.508l7.799 7.799a2.961 2.961 0 0 0-.508.894h-6.37A2.99 2.99 0 0 0 7 15.184zM6 5a1.001 1.001 0 1 1-1 1c0-.551.448-1 1-1zm0 14a1.001 1.001 0 0 1 0-2 1.001 1.001 0 0 1 0 2zm12 0a1.001 1.001 0 0 1 0-2 1.001 1.001 0 0 1 0 2z"></path>
-            </svg>
-        </div>
+            3D
+        </p>
 
         <h3 class="
             dark:text-gray-100
@@ -236,8 +216,7 @@
         href="https://github.com/c3lang/vendor/tree/main/libraries/vulkan.c3l"
         aria-label="C3 Vulkan module"
     >
-        <!-- Icon -->
-        <div class="
+        <p class="
             p-2
             lg:mb-4
             lg:mr-0
@@ -248,20 +227,13 @@
             bg-gray-200
             rounded-md
             w-min
+            text-blue-600
+            dark:text-blue-400
+            font-bold
             "
         >
-            <svg class="
-                fill-blue-600
-                dark:fill-blue-400
-                "
-                xmlns="http://www.w3.org/2000/svg" 
-                width="24" 
-                height="24" 
-                viewBox="0 0 24 24"
-            >
-                <path d="M18 15c-.183 0-.358.022-.532.054L8.946 6.532C8.978 6.359 9 6.182 9 6c0-1.654-1.346-3-3-3S3 4.346 3 6c0 1.302.839 2.401 2 2.815v6.369A2.997 2.997 0 0 0 3 18c0 1.654 1.346 3 3 3a2.993 2.993 0 0 0 2.815-2h6.369a2.994 2.994 0 0 0 2.815 2c1.654 0 3-1.346 3-3S19.654 15 18 15zm-11 .184V8.816c.329-.118.629-.291.894-.508l7.799 7.799a2.961 2.961 0 0 0-.508.894h-6.37A2.99 2.99 0 0 0 7 15.184zM6 5a1.001 1.001 0 1 1-1 1c0-.551.448-1 1-1zm0 14a1.001 1.001 0 0 1 0-2 1.001 1.001 0 0 1 0 2zm12 0a1.001 1.001 0 0 1 0-2 1.001 1.001 0 0 1 0 2z"></path>
-            </svg>
-        </div>
+            3D
+        </p>
 
         <h3 class="
             dark:text-gray-100
@@ -301,8 +273,7 @@
         href="https://github.com/c3lang/vendor/tree/main/libraries/glfw.c3l"
         aria-label="C3 GLFW module"
     >
-        <!-- Icon -->
-        <div class="
+        <p class="
             p-2
             lg:mb-4
             lg:mr-0
@@ -313,20 +284,13 @@
             bg-gray-200
             rounded-md
             w-min
+            text-blue-600
+            dark:text-blue-400
+            font-bold
             "
         >
-            <svg class="
-                fill-blue-600
-                dark:fill-blue-400
-                "
-                xmlns="http://www.w3.org/2000/svg" 
-                width="24" 
-                height="24" 
-                viewBox="0 0 24 24"
-            >
-                <path d="M18 15c-.183 0-.358.022-.532.054L8.946 6.532C8.978 6.359 9 6.182 9 6c0-1.654-1.346-3-3-3S3 4.346 3 6c0 1.302.839 2.401 2 2.815v6.369A2.997 2.997 0 0 0 3 18c0 1.654 1.346 3 3 3a2.993 2.993 0 0 0 2.815-2h6.369a2.994 2.994 0 0 0 2.815 2c1.654 0 3-1.346 3-3S19.654 15 18 15zm-11 .184V8.816c.329-.118.629-.291.894-.508l7.799 7.799a2.961 2.961 0 0 0-.508.894h-6.37A2.99 2.99 0 0 0 7 15.184zM6 5a1.001 1.001 0 1 1-1 1c0-.551.448-1 1-1zm0 14a1.001 1.001 0 0 1 0-2 1.001 1.001 0 0 1 0 2zm12 0a1.001 1.001 0 0 1 0-2 1.001 1.001 0 0 1 0 2z"></path>
-            </svg>
-        </div>
+            3D
+        </p>
 
         <h3 class="
             dark:text-gray-100
@@ -367,8 +331,7 @@
         href="https://github.com/c3lang/vendor/tree/main/libraries/webgpu.c3l"
         aria-label="C3 WebGPU module"
     >
-        <!-- Icon -->
-        <div class="
+        <p class="
             p-2
             lg:mb-4
             lg:mr-0
@@ -379,20 +342,13 @@
             bg-gray-200
             rounded-md
             w-min
+            text-blue-600
+            dark:text-blue-400
+            font-bold
             "
         >
-            <svg class="
-                fill-blue-600
-                dark:fill-blue-400
-                "
-                xmlns="http://www.w3.org/2000/svg" 
-                width="24" 
-                height="24" 
-                viewBox="0 0 24 24"
-            >
-                <path d="M18 15c-.183 0-.358.022-.532.054L8.946 6.532C8.978 6.359 9 6.182 9 6c0-1.654-1.346-3-3-3S3 4.346 3 6c0 1.302.839 2.401 2 2.815v6.369A2.997 2.997 0 0 0 3 18c0 1.654 1.346 3 3 3a2.993 2.993 0 0 0 2.815-2h6.369a2.994 2.994 0 0 0 2.815 2c1.654 0 3-1.346 3-3S19.654 15 18 15zm-11 .184V8.816c.329-.118.629-.291.894-.508l7.799 7.799a2.961 2.961 0 0 0-.508.894h-6.37A2.99 2.99 0 0 0 7 15.184zM6 5a1.001 1.001 0 1 1-1 1c0-.551.448-1 1-1zm0 14a1.001 1.001 0 0 1 0-2 1.001 1.001 0 0 1 0 2zm12 0a1.001 1.001 0 0 1 0-2 1.001 1.001 0 0 1 0 2z"></path>
-            </svg>
-        </div>
+            3D
+        </p>
 
         <h3 class="
             dark:text-gray-100
@@ -436,8 +392,7 @@
         href="https://github.com/c3lang/vendor/tree/main/libraries/curl.c3l"
         aria-label="C3 Curl module"
     >
-        <!-- Icon -->
-        <div class="
+        <p class="
             p-2
             lg:mb-4
             lg:mr-0
@@ -448,20 +403,13 @@
             bg-gray-200
             rounded-md
             w-min
+            text-blue-600
+            dark:text-blue-400
+            font-bold
             "
         >
-            <svg class="
-                fill-blue-600
-                dark:fill-blue-400
-                "
-                xmlns="http://www.w3.org/2000/svg" 
-                width="24" 
-                height="24" 
-                viewBox="0 0 24 24"
-            >
-            <path d="M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10 10-4.486 10-10S17.514 2 12 2zM4 12c0-.899.156-1.762.431-2.569L6 11l2 2v2l2 2 1 1v1.931C7.061 19.436 4 16.072 4 12zm14.33 4.873C17.677 16.347 16.687 16 16 16v-1a2 2 0 0 0-2-2h-4v-3a2 2 0 0 0 2-2V7h1a2 2 0 0 0 2-2v-.411C17.928 5.778 20 8.65 20 12a7.947 7.947 0 0 1-1.67 4.873z"></path>
-            </svg>
-        </div>
+            Web
+        </p>
 
         <h3 class="
             dark:text-gray-100
@@ -504,8 +452,7 @@
         href="https://github.com/c3lang/vendor/tree/main/libraries/tree_sitter.c3l"
         aria-label="C3 Treesitter module"
     >
-        <!-- Icon -->
-        <div class="
+        <p class="
             p-2
             lg:mb-4
             lg:mr-0
@@ -516,20 +463,13 @@
             bg-gray-200
             rounded-md
             w-min
+            text-blue-600
+            dark:text-blue-400
+            font-bold
             "
         >
-            <svg class="
-                fill-blue-600
-                dark:fill-blue-400
-                "
-                xmlns="http://www.w3.org/2000/svg" 
-                width="24" 
-                height="24" 
-                viewBox="0 0 24 24"
-            >
-                <path d="M5 8h2V6h3.252L7.68 18H5v2h8v-2h-2.252L13.32 6H17v2h2V4H5z"></path>
-            </svg>
-        </div>
+            Parsing
+        </p>
 
         <h3 class="
             dark:text-gray-100
@@ -572,8 +512,7 @@
         href="https://github.com/c3lang/vendor/tree/main/libraries/tigr.c3l"
         aria-label="C3 Tigr module"
     >
-        <!-- Icon -->
-        <div class="
+        <p class="
             p-2
             lg:mb-4
             lg:mr-0
@@ -584,20 +523,13 @@
             bg-gray-200
             rounded-md
             w-min
+            text-blue-600
+            dark:text-blue-400
+            font-bold
             "
         >
-            <svg class="
-                fill-blue-600
-                dark:fill-blue-400
-                "
-                xmlns="http://www.w3.org/2000/svg" 
-                width="24" 
-                height="24" 
-                viewBox="0 0 24 24"
-            >
-                <path d="M21 15a9.11 9.11 0 0 0-.18-1.81 8.53 8.53 0 0 0-.53-1.69 8.08 8.08 0 0 0-.83-1.5 8.73 8.73 0 0 0-1.1-1.33A8.27 8.27 0 0 0 17 7.54a8.08 8.08 0 0 0-1.53-.83L15 6.52V5a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v1.52l-.5.19a8.08 8.08 0 0 0-1.5.83 8.27 8.27 0 0 0-1.33 1.1A8.27 8.27 0 0 0 4.54 10a8.08 8.08 0 0 0-.83 1.53 9 9 0 0 0-.53 1.69A9.11 9.11 0 0 0 3 15v3H2v2h20v-2h-1zM5 15a7.33 7.33 0 0 1 .14-1.41 6.64 6.64 0 0 1 .41-1.31 7.15 7.15 0 0 1 .64-1.19 7.15 7.15 0 0 1 1.9-1.9A7.33 7.33 0 0 1 9 8.68V15h2V6h2v9h2V8.68a8.13 8.13 0 0 1 .91.51 7.09 7.09 0 0 1 1 .86 6.44 6.44 0 0 1 .85 1 6 6 0 0 1 .65 1.19 7.13 7.13 0 0 1 .41 1.31A7.33 7.33 0 0 1 19 15v3H5z"></path>
-            </svg>
-        </div>
+            UI
+        </p>
 
         <h3 class="
             dark:text-gray-100

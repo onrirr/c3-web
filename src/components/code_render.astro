@@ -1,6 +1,6 @@
 ---
 
-const { name, mobile_code, desktop_code, is_default, highlighter } = Astro.props;
+const { name, mobile_code,  is_default, highlighter } = Astro.props;
 
 
 let mobile_code_html = highlighter.codeToHtml(
@@ -15,18 +15,6 @@ let mobile_code_html = highlighter.codeToHtml(
     }
 )
 
-let desktop_code_html = highlighter.codeToHtml(
-    desktop_code,
-    { 
-        lang: 'c3', 
-        // theme: 'slack-dark' 
-        themes: { 
-            light: 'min-light',
-            // light: 'github-light-default',
-            dark: 'andromeeda',
-        }
-    }
-)
 
 
 // Post-process the code-formatter output to link it to standard Tailwind classes
@@ -106,14 +94,13 @@ function processHtml(input) {
 }
 
 mobile_code_html = processHtml(mobile_code_html)
-desktop_code_html = processHtml(desktop_code_html)
 
 ---
 
 
 <!-- Mobile code -->
 <div class=`
-    ${is_default && "xl:hidden flex"}
+    ${is_default && "flex"}
     ${!is_default && "hidden"}
     rounded-md
 
@@ -121,25 +108,11 @@ desktop_code_html = processHtml(desktop_code_html)
     sm:p-4
     md:p-8
     `
-    id=`${name}_mobile_code`
-    aria-label="C3 example code, mobile variant"
+    id={name}
+    aria-label="C3 example code"
 >
     <Fragment set:html={mobile_code_html} />
 </div>
 
-<!-- Desktop code -->
-<div class=`
-    ${is_default && "hidden xl:flex"}
-    ${!is_default && "hidden"}
-
-    rounded-md
-    p-8
-    xl:p-12
-    `
-    id=`${name}_desktop_code`
-    aria-label="C3 example code, desktop variant"
->
-    <Fragment set:html={desktop_code_html} />
-</div>
 
 
