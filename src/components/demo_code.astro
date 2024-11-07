@@ -118,7 +118,7 @@ import CodeRender from "./code_render.astro";
             py-4
             px-10
             mt-4
-            text-lg
+            md:mt-0
             text-black
             bg-white
             dark:text-gray-100
@@ -127,7 +127,6 @@ import CodeRender from "./code_render.astro";
             border-2
             border-gray-300
         
-            font-semibold
             rounded-md
             shadow-md
             " 
@@ -138,8 +137,6 @@ import CodeRender from "./code_render.astro";
 
             {buttons.map((item, index) => (
                 <option class="
-                    text-black
-                    bg-white
                     "
                     
                     value={item}
