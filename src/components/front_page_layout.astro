@@ -1506,7 +1506,7 @@ await setTimeout(highlighter.dispose, 2000)
 <!-- Call to Action -->
 <div class="
     grid
-    grid-rows-2
+    grid-rows-[min-content_min-content]
 
     dark:text-gray-200
     md:p-24
@@ -1588,6 +1588,7 @@ await setTimeout(highlighter.dispose, 2000)
         <div class="
             grid
             grid-cols-3
+            gap-4
             lg:pb-12
             pt-6
         ">
@@ -1596,24 +1597,38 @@ await setTimeout(highlighter.dispose, 2000)
 
             <!-- Github Icon -->
             <a class="
-                px-4
                 flex
                 flex-col
                 items-center
                 justify-center
                 justify-items-center
                 
-                hover:fill-blue-500
-                dark:hover:fill-blue-400
                 dark:fill-white
                 w-full
-                h-full"
+                h-full
+                
+                px-6
+                py-4
+                text-black
+                bg-white
+                dark:text-gray-100
+                dark:bg-[hsl(224,12%,4%)]
+                border-2
+                border-gray-300
+                dark:border-gray-700
+            
+                rounded-md
+                ring-2
+                dark:ring-[hsl(224,12%,12%)]
+                ring-[hsl(224,12%,95%)]
+                dark:hover:border-gray-600
+                hover:border-gray-400"
                 href="https://github.com/c3lang/c3c/discussions"
                 aria-label="Discuss C3 on Github"
             > 
 
                 <svg
-                    class="ml-1 h-12"
+                    class="h-12"
                     viewBox="0 0 100 96.36"
                     xmlns="http://www.w3.org/2000/svg"
                     role="img"
@@ -1627,7 +1642,7 @@ await setTimeout(highlighter.dispose, 2000)
             
 
                 <p class="
-                    py-3
+                    pt-2
                 ">
                     Github
                 </p>
@@ -1638,23 +1653,38 @@ await setTimeout(highlighter.dispose, 2000)
 
             <!-- Discourse Icon -->
             <a class="
-                px-4
+                
                 flex
                 flex-col
                 items-center
                 justify-center
                 justify-items-center
                 
-                hover:fill-blue-500
-                dark:hover:fill-blue-400
                 dark:fill-white
                 w-full
-                h-full"
+                h-full
+                
+                px-6
+                py-4
+                text-black
+                bg-white
+                dark:text-gray-100
+                dark:bg-[hsl(224,12%,4%)]
+                border-2
+                border-gray-300
+                dark:border-gray-700
+            
+                rounded-md
+                ring-2
+                dark:ring-[hsl(224,12%,12%)]
+                ring-[hsl(224,12%,95%)]
+                dark:hover:border-gray-600
+                hover:border-gray-400"
                 href="https://c3lang.discourse.group/"
                 aria-label="Dicuss C3 on forums"
             > 
                 <svg
-                    class="ml-1 h-12"
+                    class="h-12"
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 24 24"
                     role="img"
@@ -1665,7 +1695,7 @@ await setTimeout(highlighter.dispose, 2000)
                 </svg>
 
                 <p class="
-                    py-3
+                    pt-2
                 ">
                     Forums
                 </p>
@@ -1675,18 +1705,34 @@ await setTimeout(highlighter.dispose, 2000)
 
             <!-- Discord -->
             <a class="
-                px-4
+                
                 flex
                 flex-col
                 items-center
                 justify-center
                 justify-items-center
                 
-                hover:fill-blue-500
-                dark:hover:fill-blue-400
                 dark:fill-white
                 w-full
-                h-full"
+                h-full
+                
+                px-6
+                py-4
+                text-black
+                bg-white
+                dark:text-gray-100
+                dark:bg-[hsl(224,12%,4%)]
+                border-2
+                border-gray-300
+                dark:border-gray-700
+            
+                rounded-md
+                ring-2
+                dark:ring-[hsl(224,12%,12%)]
+                ring-[hsl(224,12%,95%)]
+                dark:hover:border-gray-600
+                hover:border-gray-400
+"
                 href="https://discord.gg/qN76R87"
                 aria-label="Discuss C3 on Discord"
             >            
@@ -1702,7 +1748,7 @@ await setTimeout(highlighter.dispose, 2000)
                 </svg>
 
                 <p class="
-                    py-3
+                    pt-2
                 ">
                     Discord
                 </p>
