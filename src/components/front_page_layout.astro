@@ -658,6 +658,8 @@ await setTimeout(highlighter.dispose, 2000)
             row-start-3
             md:row-start-3
             
+            px-10
+            sm:px-0
             grid 
             gap-3 
             w-full 
@@ -673,7 +675,6 @@ await setTimeout(highlighter.dispose, 2000)
                 text-center
                 py-3
                 px-2
-                mx-10
                 md:px-14
 
                 mt-4
@@ -784,7 +785,7 @@ await setTimeout(highlighter.dispose, 2000)
                 "
             >
                 Bring your existing C code with you! C3 fits into 
-                existing C projects (for example 
+                existing C projects, for example
                 <a class="
                     font-semibold 
                     text-blue-500 
@@ -792,8 +793,8 @@ await setTimeout(highlighter.dispose, 2000)
                     href="https://github.com/c3lang/vkQuake"
                     aria-label="C3 integrates with C projects here's an example with VKQuake"
                 >
-                    VKQuake</a>), 
-                or you can natively link C into C3 projects.
+                VKQuake</a> was natively integrated with C3.
+                You can also natively link C into C3 projects without bindings.
             </p>
 
             <p class="
@@ -803,7 +804,7 @@ await setTimeout(highlighter.dispose, 2000)
                 "
             >
                 Code in C3 is organised into namespaced modules, with simple 
-                methods to share behaviour between structs via interfaces or 
+                mechanisms to share behaviour between structs via interfaces or 
                 struct subtyping and to abstract differences  in behaviour 
                 with typed function pointers.
             </p>
@@ -979,7 +980,7 @@ await setTimeout(highlighter.dispose, 2000)
                 pb-2
                 "
             >
-                Generic modules
+                Generic Modules
             </h3>
             <p class="
                 col-start-2 
@@ -1062,7 +1063,7 @@ await setTimeout(highlighter.dispose, 2000)
                 pb-2
                 "
             >
-                Runtime and compile reflection
+                Run-Time And Compile-Time Reflection
             </h3>
             <p class="
                 col-start-2 
@@ -1070,7 +1071,7 @@ await setTimeout(highlighter.dispose, 2000)
                 dark:text-gray-400
                 "
             >
-                Type introspection is available both at compile time and runtime,
+                Type introspection is available both at compile-time and run-time,
                 powering flexible macros and functions
             </p>
         </div>
@@ -1438,7 +1439,7 @@ await setTimeout(highlighter.dispose, 2000)
                 pb-2
                 "
             >
-                Built-in slices and slicing
+                Built-In Slices And Slicing
             </h3>
             <p class="
                 col-start-2 
@@ -1446,8 +1447,8 @@ await setTimeout(highlighter.dispose, 2000)
                 dark:text-gray-400
                 "
             >
-                Slices are type safe "pointer + length" types which natively
-                supports copying and comparison.
+                Slices are type safe "pointer + length" types that natively
+                support copying and comparison.
             </p>
         </div>
 
@@ -1486,7 +1487,7 @@ await setTimeout(highlighter.dispose, 2000)
                 "
             >
                 C3 brings programming-by-contract to the mainstream with
-                unobtrusive contracts that are used to express both runtime and
+                unobtrusive contracts that are used to express both run-time and
                 compile-time constraints.
             </p>
         </div>
@@ -1519,7 +1520,7 @@ await setTimeout(highlighter.dispose, 2000)
                 pb-2
                 "
             >
-                Debug with safety checks
+                Debug With Safety Checks
             </h3>
             <p class="
                 col-start-2 
@@ -1564,7 +1565,7 @@ await setTimeout(highlighter.dispose, 2000)
                 pb-2
                 "
             >
-                Detailed stacktraces
+                Detailed Stacktraces
             </h3>
             <p class="
                 col-start-2 
@@ -1572,7 +1573,7 @@ await setTimeout(highlighter.dispose, 2000)
                 dark:text-gray-400
                 "
             >
-                No more anonymous "segmentation fault" errors: the C3 standard
+                No more cryptic "segmentation fault" errors! The C3 standard
                 library enables detailed stacktraces out of the box for your debug
                 builds.
             </p>
