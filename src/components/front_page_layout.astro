@@ -232,7 +232,7 @@ await setTimeout(highlighter.dispose, 2000)
     lg:sticky
     lg:top-0
     lg:z-50
-    bg-white
+    bg-[hsl(240,11%,96%)]
     dark:bg-[hsl(224,12%,4%)]
     border-x-0
     border-t-0
@@ -241,6 +241,8 @@ await setTimeout(highlighter.dispose, 2000)
     dark:border-b-gray-800
     "
 >
+
+
 
     <header class="
         
@@ -265,7 +267,7 @@ await setTimeout(highlighter.dispose, 2000)
         select-none
         font-medium
         text-indigo-950
-        bg-white
+        
         dark:bg-[hsl(224,12%,4%)]
         
         max-w-[90rem]
@@ -589,14 +591,20 @@ await setTimeout(highlighter.dispose, 2000)
     </header>
 </div>
 
+
+<!-- subtitle colour idea: 0d2889 or 162e7d or bolder 0e3fc9 -->
+ <!-- mix-blend-color is beautiful with bg-blue-700 -->
 <!-- Hero banner -->
 <!-- Wrapping header to colour the screen edges -->
 <div class="
-    bg-[hsl(228,13%,93%)]
-    dark:bg-[hsl(223,12%,1%)]
+    bg-[hsl(240,11%,96%)]
+    dark:bg-[hsl(224,12%,4%)]
 
     "
 >
+
+
+
     <div class="
         grid
         grid-rows-[repeat(3,min-content)]
@@ -642,6 +650,7 @@ await setTimeout(highlighter.dispose, 2000)
         </h1>
 
         <h2 class="
+            relative
             row-start-2
             md:row-start-2
             my-6
@@ -652,7 +661,44 @@ await setTimeout(highlighter.dispose, 2000)
             md:text-xl
         ">
             Effortlessly safe, high performance, modular code
+
+            <!-- Background Blob -->
+            <!-- <div class="
+                absolute
+                top-[-20rem]
+                left-[-20rem]
+                
+                rounded-full
+                bg-blue-700
+                mix-blend-color
+                blur-[50rem]
+                z-50
+                w-[40rem]
+                h-[40rem]
+            "/> -->
+
+             <!-- Background Blob -->
+             <!-- <div class="
+                absolute
+                top-[-20rem]
+                left-[20rem]
+                
+                rounded-full
+                bg-purple-700
+
+                mix-blend-color
+                blur-[50rem]
+                z-50
+                w-[40rem]
+                h-[40rem]
+            "/> -->
+
+
+
+
         </h2>
+
+        
 
         <div class="
             row-start-3
@@ -673,16 +719,16 @@ await setTimeout(highlighter.dispose, 2000)
                 justify-center
                 items-center
                 text-center
-                py-3
+                py-2
                 px-2
-                md:px-14
+                md:px-5
 
                 mt-4
                 md:mt-0
-                text-black
-                bg-white
+                text-white
+                bg-blue-500
                 dark:text-gray-100
-                dark:bg-[hsl(224,12%,4%)]
+                dark:bg-blue-500
                 
                 border-2
                 border-gray-300
@@ -734,6 +780,8 @@ await setTimeout(highlighter.dispose, 2000)
 
 
 
+<!-- TODO: C ABI as a separate section, then modules, generic modules and semantic macros as a code demo -->
+
 <!-- Simple And Reusable -->
 <!-- Wrapping header to colour the screen edges -->
 <div class="
@@ -775,7 +823,7 @@ await setTimeout(highlighter.dispose, 2000)
                 pb-4
                 "
             >
-            Simple And Reusable
+            Use And Extend Existing Code
             </h2>
 
             <p class="
@@ -784,8 +832,7 @@ await setTimeout(highlighter.dispose, 2000)
                 dark:text-gray-400
                 "
             >
-                Bring your existing C code with you! C3 fits into 
-                existing C projects, for example
+                C3 fits into existing C projects, like
                 <a class="
                     font-semibold 
                     text-blue-500 
@@ -793,8 +840,8 @@ await setTimeout(highlighter.dispose, 2000)
                     href="https://github.com/c3lang/vkQuake"
                     aria-label="C3 integrates with C projects here's an example with VKQuake"
                 >
-                VKQuake</a> was natively integrated with C3.
-                You can also natively link C into C3 projects without bindings.
+                VKQuake</a> for example that natively integrated with C3.
+                You can also natively link C into C3 projects without C3 bindings.
             </p>
 
             <p class="
@@ -1086,7 +1133,7 @@ await setTimeout(highlighter.dispose, 2000)
 
 <!-- High Performance -->
 <div class="
-    bg-[hsl(228,13%,93%)]
+    bg-[hsl(240,11%,96%)]
     dark:bg-[hsl(223,12%,1%)]
 "
 >
@@ -1186,7 +1233,7 @@ await setTimeout(highlighter.dispose, 2000)
 
 
 <div class="
-    bg-[hsl(228,13%,93%)]
+    bg-[hsl(240,11%,96%)]
     dark:bg-[hsl(223,12%,1%)]
 "
 >
@@ -1597,7 +1644,7 @@ await setTimeout(highlighter.dispose, 2000)
     sm:p-20
     py-16
     px-12
-    bg-[hsl(228,13%,93%)]
+    bg-[hsl(240,11%,96%)]
     dark:bg-[hsl(223,12%,1%)]
     "
 >
@@ -1852,7 +1899,7 @@ await setTimeout(highlighter.dispose, 2000)
 
 <!-- Packaged Libraries -->
 <!-- <div class="
-    bg-[hsl(228,13%,93%)]
+    bg-[hsl(240,11%,96%)]
     dark:bg-[hsl(223,13%,22%)]
     "
 >
