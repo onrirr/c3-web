@@ -16,7 +16,7 @@ interface Props {
     highlighter: HighlighterGeneric<BundledLanguage, BundledTheme>
 }
 
-const { selectID, buttons, code, highlighter } = Astro.props;
+const {  selectID, buttons, code, highlighter } = Astro.props;
 
 import CodeRender from "./code_render.astro";
 
@@ -101,14 +101,15 @@ import CodeRender from "./code_render.astro";
 
 <div class="
     bg-white
-    dark:bg-[hsl(224,12%,10%)]
+    dark:bg-[hsl(224,32%,12%)]
     rounded-2xl
-    overflow-clip
+    overflow-x-auto
 
-    border-2
+    border-[3px]
     border-[hsl(224,12%,90%)]
     dark:border-gray-800
-">
+    "
+>
     <form>
         <label 
             class="
@@ -120,7 +121,7 @@ import CodeRender from "./code_render.astro";
         </label>
 
 
-        <select class="
+        <select class=`
             mx-10
             text-center
             w-[calc(100%-5rem)]
@@ -139,7 +140,7 @@ import CodeRender from "./code_render.astro";
             text-black
             bg-white
             dark:text-gray-100
-            dark:bg-[hsl(224,12%,10%)]
+            dark:bg-[hsl(224,20%,6%)]
             border-2
             border-gray-300
             dark:border-gray-700
@@ -151,7 +152,7 @@ import CodeRender from "./code_render.astro";
             ring-[hsl(224,12%,95%)]
             dark:hover:border-gray-600
             hover:border-gray-400
-            " 
+            ` 
             
             name={selectID} 
             id={selectID}
@@ -176,9 +177,8 @@ import CodeRender from "./code_render.astro";
 
     <!-- Code container -->
     <div class=`
-        bg-white
         overflow-x-auto
-        dark:bg-[hsl(224,12%,10%)]
+
         px-3
         sm:px-4
         pb-4

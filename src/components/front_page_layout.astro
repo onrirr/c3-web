@@ -232,14 +232,8 @@ await setTimeout(highlighter.dispose, 2000)
     lg:sticky
     lg:top-0
     lg:z-50
-   bg-[hsl(224,37%,97%)]
-    bg-gradient-to-r
-    dark:bg-[hsl(224,12%,4%)]
-    border-x-0
-    border-t-0
-    border-b-2
-    border-b-gray-100
-    dark:border-b-gray-800
+    bg-[hsl(224,32%,94%)]
+    dark:bg-[hsl(224,32%,6%)]
     "
 >
 
@@ -268,7 +262,7 @@ await setTimeout(highlighter.dispose, 2000)
         select-none
         font-medium
         
-        dark:bg-[hsl(224,12%,4%)]
+        dark:bg-[hsl(224,32%,6%)]
         
         max-w-[90rem]
         mx-auto"
@@ -523,7 +517,7 @@ await setTimeout(highlighter.dispose, 2000)
         <!-- ================================= -->
 
         <!-- Discourse Icon -->
-        <a class="
+        <!-- <a class="
             px-3
             flex
             items-center
@@ -552,7 +546,7 @@ await setTimeout(highlighter.dispose, 2000)
                 ></path>
             </svg>
 
-        </a>
+        </a> -->
 
         <!-- ================================= -->
 
@@ -594,125 +588,108 @@ await setTimeout(highlighter.dispose, 2000)
 </div>
 
 
-<!-- subtitle colour idea: 0d2889 or 162e7d or bolder 0e3fc9 -->
- <!-- mix-blend-color is beautiful with bg-blue-700 -->
-<!-- Hero banner -->
-<!-- Wrapping header to colour the screen edges -->
-<!-- Original
-
-bg-[hsl(240,11%,96%)]
-dark:bg-[hsl(224,12%,4%)] -->
-
-<!-- New
- 
-    from-[hsl(224,100%,96%)]  // new top blue
-    via-[hsl(240,11%,96%)]
-    to-[hsl(272,100%,98%)]    // new purple
-    -->
+<!-- Top Hero section -->
 <div class="
-    bg-[hsl(224,37%,97%)]
-    bg-gradient-to-r
-    dark:bg-[hsl(224,12%,4%)]
-
-     	
-
+    bg-[hsl(224,32%,94%)]
+    dark:bg-[hsl(224,32%,6%)]	
     "
 >
 
-<!-- ============================= -->
-<!-- start of imported hero -->
+    <!-- ============================= -->
+    <!-- start of imported hero -->
 
-<div class="
-    relative
-    overflow-hidden
-    before:absolute
-    before:top-0 before:left-1/2
-    before:bg-no-repeat
-    before:bg-top
-    before:bg-cover
-    before:w-full
-    before:h-full
-    before:-z-[1]
-    before:transform
-    before:-translate-x-1/2"
->
-  <div class="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-10">
-    <div class="mt-5 text-center mx-auto">
-      <h1
-        class="flex justify-center content-center font-bold text-stone-950 text-2xl md:text-5xl lg:text-6xl dark:text-gray-200"
-      >
-        <img src="/logo.svg" class="flex justfity-center" />
-      </h1>
-    </div>
-    <div class="mt-5 max-w-3xl text-center mx-auto">
-      <p class="text-lg text-gray-600 dark:text-gray-400">
-        <!-- The Next Generation of C -->
-      </p>
-    </div>
-    <div class="mt-8 grid gap-3 w-full sm:inline-flex sm:justify-center">
-      <a class="
-        inline-flex
-        justify-center
-        items-center
-        gap-x-3 text-center
-        bg-blue-600
-        border-blue-600
-        hover:border-slate-950
-        border-2
-        rounded-2xl
-        py-3
-        px-4
-        shadow-sm
-        focus:z-10
-        focus:outline-none focus:ring-2 dark:focus:ring-blue-200 focus:ring-blue-800 focus:ring-offset-2 focus:ring-offset-white dark:focus:ring-offset-stone-950
-        transition-all
-        leading-1
-        text-sm
-        text-white
-        font-medium
-        select-none
-        dark:bg-blue-600
-        dark:hover:border-blue-500
-        dark:border-blue-600
-        dark:text-white"
-        href="/getting-started"
-      >
-        Get started
-        <svg
-          class="w-3 h-3"
-          width="16"
-          height="16"
-          viewBox="0 0 16 16"
-          fill="none"
+    <div class="
+        relative
+        overflow-hidden
+        before:absolute
+        before:top-0 before:left-1/2
+        before:bg-no-repeat
+        before:bg-top
+        before:bg-cover
+        before:w-full
+        before:h-full
+        before:-z-[1]
+        before:transform
+        before:-translate-x-1/2"
+    >
+    <div class="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-10">
+        <div class="mt-5 text-center mx-auto">
+        <h1
+            class="flex justify-center content-center font-bold text-stone-950 text-2xl md:text-5xl lg:text-6xl dark:text-gray-200"
         >
-          <path
-            d="M5.27921 2L10.9257 7.64645C11.1209 7.84171 11.1209 8.15829 10.9257 8.35355L5.27921 14"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"></path>
-        </svg>
-      </a>
+            <img src="/logo.svg" class="flex justfity-center" />
+        </h1>
+        </div>
+        <div class="mt-5 max-w-3xl text-center mx-auto">
+        <p class="text-lg text-gray-600 dark:text-gray-400">
+            <!-- The Next Generation of C -->
+        </p>
+        </div>
+        <div class="mt-8 grid gap-3 w-full sm:inline-flex sm:justify-center">
+        <a class="
+            flex
+            justify-center
+            items-center
+            gap-x-3 text-center
+            bg-blue-600
+            border-blue-600
+            hover:border-slate-950
+            border-2
+            rounded-2xl
+            py-3
+            px-4
+            shadow-sm
+            focus:z-10
+            focus:outline-none focus:ring-2 dark:focus:ring-blue-200 focus:ring-blue-800 focus:ring-offset-2 focus:ring-offset-white dark:focus:ring-offset-stone-950
+            transition-all
+            leading-1
+            text-sm
+            text-white
+            font-semibold
+            select-none
+            dark:bg-blue-600
+            dark:hover:border-blue-600
+            dark:border-blue-600
+            dark:text-white"
+            href="/getting-started"
+        >
+            Get started
+            <svg
+            class="w-3 h-3"
+            width="16"
+            height="16"
+            viewBox="0 0 16 16"
+            fill="none"
+            >
+            <path
+                d="M5.27921 2L10.9257 7.64645C11.1209 7.84171 11.1209 8.15829 10.9257 8.35355L5.27921 14"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"></path>
+            </svg>
+        </a>
+        </div>
+        <div class="mt-5 flex justify-center items-center gap-x-1 sm:gap-x-3">
+        <span class="text-sm text-gray-600 dark:text-gray-400"
+            >Current version:
+        </span>
+        <span class="text-sm font-bold text-gray-900 dark:text-white">0.6.3</span>
+
+        </div>
     </div>
-    <div class="mt-5 flex justify-center items-center gap-x-1 sm:gap-x-3">
-      <span class="text-sm text-gray-600 dark:text-gray-400"
-        >Current version:
-      </span>
-      <span class="text-sm font-bold text-gray-900 dark:text-white">0.6.3</span>
-
     </div>
-  </div>
-</div>
 
 
-<!-- end of imported hero -->
-<!-- ======================== -->
+    <!-- end of imported hero -->
+    <!-- ======================== -->
 
 
     <div class="
         pt-24
         pb-24
         grid
-        grid-cols-2
+        grid-cols-1
+        lg:grid-cols-2
         gap-16
         w-full
         items-center
@@ -723,7 +700,12 @@ dark:bg-[hsl(224,12%,4%)] -->
         mx-auto
         "
     >
-        <div>
+        <div class="
+            row-start-1
+            col-start-1
+            lg:row-start-1
+            lg:col-start-1
+        ">
             <h1
                 class="
                 pb-2
@@ -752,7 +734,6 @@ dark:bg-[hsl(224,12%,4%)] -->
             </h1>
 
             <h2 class="
-                col-start-1
                 my-6
   
                 font-semibold
@@ -771,70 +752,20 @@ dark:bg-[hsl(224,12%,4%)] -->
 
             </h2>
 
-            
-            <!-- Getting started -->
-            <!-- <div class="
-                
-                px-10
-                sm:px-0
-                grid 
-                gap-3 
-                w-full 
-                md:flex 
-                my-8
-                
-                "
-            >
-                <a class="
-                    flex
-                    justify-center
-                    items-center
-                    text-center
-                    py-2
-                    px-2
-                    md:px-5
 
-                    mt-4
-                    md:mt-0
-                    text-white
-                    bg-blue-500
-                    dark:text-gray-100
-                    dark:bg-blue-500
-                    
-                    border-2
-                    border-gray-300
-                    dark:border-gray-700
-                
-                    rounded-md
-                    ring-2
-                    dark:ring-[hsl(224,12%,12%)]
-                    ring-[hsl(224,12%,95%)]
-                    dark:hover:border-gray-600
-                    hover:border-gray-400
-                    "
-                    href="/getting-started/"
-                    aria-label="Read the C3 Documentation"
-                >
-                    Get started
-                    <svg
-                        class="w-3 h-3 ml-2"
-                        viewBox="0 0 16 16"
-                        fill="none"
-                        role="img"
-                    >
-                    <path
-                        d="M5.27921 2L10.9257 7.64645C11.1209 7.84171 11.1209 8.15829 10.9257 8.35355L5.27921 14"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"></path>
-                    </svg>
-                </a>
-            </div> -->
         </div>
     
+         <!-- No border on this div, but forces tailwind to compile these classes -->
         <div class="
-
+            row-start-2
+            col-start-1
+            lg:row-start-1
+            lg:col-start-2
+            border-[hsl(217,32%,85%)] 
+            dark:border-[hsl(217,32%,20%)]
         ">
+        <!-- TODO: replace with hello world without a select -->
+        <!-- TODO: special case for single item in select remove select? -->
             <DemoCode
                 selectID="safety_code_examples"
                 buttons={
@@ -859,7 +790,7 @@ dark:bg-[hsl(224,12%,4%)] -->
 <!-- C3 Full Features grid -->
 <!-- <div class="
     bg-gray-50
-    dark:bg-[hsl(224,12%,4%)]
+    dark:bg-[hsl(224,32%,6%)]
 ">
     <Features
     code={code_input_perf}
@@ -872,14 +803,21 @@ dark:bg-[hsl(224,12%,4%)] -->
 
 
 
-<!-- Experimental section on C interop -->
+<!-- Section on C interop -->
 
-
-
+<!-- TODO: One dominant colour per block, desaturate that for the background -->
+<!-- TODO: Add examples of how to import C3 code from C -->
+<!-- TODO: Add examples of how to import C code from -->
+<!-- bg-gray-50 before -->
+ <!-- bg-[hsl(224,22%,97%)] -->
+  <!-- bg-[hsl(193,2%,98%)] -->
 <div class="
-    my-40
-    bg-gray-50
-    dark:bg-[hsl(224,12%,4%)]
+    my-24
+    sm:my-40
+    
+    bg-[hsl(240,24%,98.5%)]
+    
+    dark:bg-[hsl(224,32%,6%)]
     "
 >
     <div class="
@@ -906,6 +844,13 @@ dark:bg-[hsl(224,12%,4%)] -->
             lg:pr-0
             lg:pl-24
         ">
+            <hr class="
+                border-[3px] 
+                border-cyan-700
+                dark:border-cyan-500
+                mb-4
+            ">
+
             <h2 class="
                 text-4xl
                 md:text-5xl
@@ -917,11 +862,11 @@ dark:bg-[hsl(224,12%,4%)] -->
                 C3 Uses C ABI
             </h2>
 
-
             <p class="
-                pb-8
-                text-gray-700 
+                pb-12
+                text-gray-500 
                 dark:text-gray-400
+                font-semibold
                 "
             >
                 C3 fits into existing C projects, like
@@ -938,9 +883,10 @@ dark:bg-[hsl(224,12%,4%)] -->
 
 
             <p class="
-                pb-8
+                pb-12
                 text-gray-500 
                 dark:text-gray-400
+                font-semibold
                 "
             >
                 If you're working in a C codebase and you want some more 
@@ -951,9 +897,11 @@ dark:bg-[hsl(224,12%,4%)] -->
             
         </div>
 
+        <!-- No border on this div, but forces tailwind to compile these classes -->
         <div class="
             lg:col-start-1
             lg:row-start-1
+
         ">
             <DemoCode
                 selectID="perf_code_examples"
@@ -998,8 +946,8 @@ dark:bg-[hsl(224,12%,4%)] -->
             "
         >
             <svg class="
-                fill-green-700
-                dark:fill-green-500
+                fill-cyan-700
+                dark:fill-cyan-500
                 pb-4
                 w-12
                 h-12
@@ -1027,8 +975,8 @@ dark:bg-[hsl(224,12%,4%)] -->
                 "
             >
                 <span class="
-                    text-green-700
-                    dark:text-green-500
+                    text-cyan-700
+                    dark:text-cyan-500
                     font-bold
                 ">
                 The full C3 feature set is available from C.</span>
@@ -1044,7 +992,8 @@ dark:bg-[hsl(224,12%,4%)] -->
             "
         >
             <svg class="
-                fill-red-600
+                fill-cyan-700
+                dark:fill-cyan-500
                 pr-4
                 w-12
                 h-12
@@ -1076,8 +1025,8 @@ dark:bg-[hsl(224,12%,4%)] -->
             >
                 <span class="
                     font-bold
-                    text-red-700
-                    dark:text-red-500
+                    text-cyan-700
+                    dark:text-cyan-500
                 ">When compiled, C and C3 code are
                 indistinguishable</span> and can work together seamlessly.
             </p>
@@ -1090,8 +1039,8 @@ dark:bg-[hsl(224,12%,4%)] -->
             "
         >
             <svg class="
-                fill-blue-700
-                dark:fill-blue-500
+                fill-cyan-700
+                dark:fill-cyan-500
                 pl-4
                 w-12
                 h-12
@@ -1122,8 +1071,8 @@ dark:bg-[hsl(224,12%,4%)] -->
             >
             <span class="
                 font-bold
-                text-blue-700
-                dark:text-blue-500
+                text-cyan-700
+                dark:text-cyan-500
             ">C libraries can be compiled natively with C3 code</span> so 
             it's easy to benefit from the rich C ecosystem from C3. 
             </p>
@@ -1137,8 +1086,8 @@ dark:bg-[hsl(224,12%,4%)] -->
             "
         >
             <svg class="
-                fill-pink-700
-                dark:fill-pink-500
+                fill-cyan-700
+                dark:fill-cyan-500
                 pb-4
                 w-12
                 h-12
@@ -1156,7 +1105,7 @@ dark:bg-[hsl(224,12%,4%)] -->
                 font-bold
                 pb-2
             ">
-                Wrap C Libraries To Unlock C3 
+                Unlock The power Of C3  
             </h3>
 
             <p class="
@@ -1168,15 +1117,17 @@ dark:bg-[hsl(224,12%,4%)] -->
             >
                 <span class="
                     font-bold
-                    text-pink-700
-                    dark:text-pink-500
-                ">By benefiting from C3 features when you use the C library</span>
-                for instance marking variables as Optionals then you have to handle errors
-                or adding programming-by-contract support to the library interface code.
+                    text-cyan-700
+                    dark:text-cyan-500
+                ">Wrapping a C library with C3 adds library support for C3.</span>
+                Like marking variables as Optionals so errors are always handled,
+                adding programming-by-contract support or adding interface support and 
+                much more.
             </p>
         </div>
 
     </div>
+    
 </div>
 
 
@@ -1184,10 +1135,18 @@ dark:bg-[hsl(224,12%,4%)] -->
 
 
 <!-- Modules and generic modules and Reflection -->
-    <div class="
-        my-40
+<!-- TODO: Add examples of Modules -->
+<!-- TODO: Add examples of Generic modules -->
+<!-- TODO: Add examples of Macros -->
+<!-- TODO: Add examples of Reflection -->
+<!-- TODO: Add bullet points for Allocator -->
+<!-- TODO: Add bullet points for os abstractions eg threads -->
+<!-- TODO: One dominant colour per block, desaturate that for the background -->
+<div class="
+        my-24
+        sm:my-40
         bg-gray-50
-        dark:bg-[hsl(224,12%,4%)]
+        dark:bg-[hsl(224,32%,6%)]
     "
     >
         <div class="
@@ -1214,6 +1173,13 @@ dark:bg-[hsl(224,12%,4%)] -->
                 lg:pl-0
                 lg:pr-24
             ">
+                <hr class="
+                    border-[3px] 
+                    border-purple-700
+                    dark:border-purple-500
+                    mb-4
+                ">
+
                 <h2 class="
                     text-4xl
                     md:text-5xl
@@ -1253,10 +1219,12 @@ dark:bg-[hsl(224,12%,4%)] -->
 
             </div>
 
-            
+            <!-- No border on this div, but forces tailwind to compile these classes we need -->
             <div class="
                 lg:col-start-2
                 lg:row-start-1
+                border-[hsl(300,32%,85%)] 
+                dark:border-[hsl(300,32%,20%)]
             ">
                 <DemoCode
                     selectID="safety_code_examples"
@@ -1302,8 +1270,8 @@ dark:bg-[hsl(224,12%,4%)] -->
             "
         >
             <svg class="
-                fill-red-700
-                dark:fill-red-500 
+                fill-purple-800
+                dark:fill-purple-400
                 pb-4
                 w-12
                 h-12
@@ -1330,14 +1298,14 @@ dark:bg-[hsl(224,12%,4%)] -->
                 "
             >
                 <span class="
-                    text-red-700
-                    dark:text-red-500 
+                    text-purple-800
+                    dark:text-purple-400
                     font-bold
                 ">To namespace and organise</span> your code 
                 simple and scalable design which follows established patterns 
                 <span class="
-                    text-red-700
-                    dark:text-red-500 
+                    text-purple-800
+                    dark:text-purple-400
                     font-bold
                 ">making large codebases easy to manage</span>.
             </p>
@@ -1350,8 +1318,8 @@ dark:bg-[hsl(224,12%,4%)] -->
             "
         >
         <svg class="
-            fill-blue-700
-            dark:fill-blue-500
+            fill-purple-800
+            dark:fill-purple-400
             pb-4
             w-12
             h-12
@@ -1380,8 +1348,8 @@ dark:bg-[hsl(224,12%,4%)] -->
                 "
             >
                 <span class="
-                    dark:text-blue-500 
-                    text-blue-700 
+                    text-purple-800
+                    dark:text-purple-400 
                     font-bold
                 ">For simple polymorphism</span> 
                 anyone can understand, read and contribute to, not just the 
@@ -1396,8 +1364,8 @@ dark:bg-[hsl(224,12%,4%)] -->
             "
         >
             <svg class="
-                fill-green-700
-                dark:fill-green-500
+                fill-purple-800
+                dark:fill-purple-400
                 pb-4
                 w-12
                 h-12
@@ -1425,8 +1393,8 @@ dark:bg-[hsl(224,12%,4%)] -->
                 "
             >
                 <span class="
-                text-green-700
-                dark:text-green-500
+                text-purple-800
+                dark:text-purple-400
                 font-bold
                 ">That are just as easy as regular functions</span>.
                 Packing much more power than C's preprocessor, they're deliberately
@@ -1442,8 +1410,8 @@ dark:bg-[hsl(224,12%,4%)] -->
             "
         >
             <svg class="
-                fill-purple-700
-                dark:fill-purple-500
+                fill-purple-800
+                dark:fill-purple-400
                 pb-4
                 w-12
                 h-12
@@ -1471,8 +1439,8 @@ dark:bg-[hsl(224,12%,4%)] -->
                 "
             >
                 <span class="
-                    text-purple-700
-                    dark:text-purple-500
+                    text-purple-800
+                    dark:text-purple-400
                     font-bold
                 ">For type introspection</span>
                 powering flexible macros and functions.
@@ -1485,9 +1453,12 @@ dark:bg-[hsl(224,12%,4%)] -->
 
 
 <!-- High Performance -->
+<!-- TODO: One dominant colour per block, desaturate that for the background -->
 <div class="
+    my-24
+    sm:my-40
     bg-[hsl(240,11%,96%)]
-    dark:bg-[hsl(223,12%,1%)]
+    dark:bg-[hsl(224,32%,6%)]
 "
 >
     <div class="
@@ -1512,22 +1483,32 @@ dark:bg-[hsl(224,12%,4%)] -->
             lg:pb-0
             lg:pr-0
             lg:pl-24
+            
         ">
+        
+            <hr class="
+                border-[3px] 
+                border-teal-700
+                dark:border-teal-500
+                mb-4
+            ">
+            
             <h2 class="
-                text-xl
-                md:text-2xl
-                font-semibold
+                text-4xl
+                md:text-5xl
+                font-bold
                 dark:text-gray-100
                 pb-4
                 "
             >
-            High Performance
+                High Performance
             </h2>
 
             <p class="
-                pb-8
-                text-gray-700 
+                pb-12
+                text-gray-500 
                 dark:text-gray-400
+                font-semibold
                 "
             >
                 Choose from multiple memory allocators to achieve 
@@ -1536,9 +1517,10 @@ dark:bg-[hsl(224,12%,4%)] -->
             </p>
 
             <p class="
-                pb-8
-                text-gray-700 
+                pb-12
+                text-gray-500 
                 dark:text-gray-400
+                font-semibold
                 "
             >
                 Optimise your code's throughput with control your program's 
@@ -1547,9 +1529,10 @@ dark:bg-[hsl(224,12%,4%)] -->
             </p>
 
             <p class="
-                pb-8
-                text-gray-700 
+                pb-12
+                text-gray-500 
                 dark:text-gray-400
+                font-semibold
                 "
             >
                 You no longer have to choose between performance and correctness, 
@@ -1560,10 +1543,12 @@ dark:bg-[hsl(224,12%,4%)] -->
 
         </div>
 
-        
+        <!-- No border on this div, but forces tailwind to compile these classes we need -->
         <div class="
             lg:col-start-1
             lg:row-start-1
+            border-[hsl(175,32%,85%)] 
+            dark:border-[hsl(175,32%,20%)]
         ">
             <DemoCode
                 selectID="perf_code_examples"
@@ -1581,13 +1566,7 @@ dark:bg-[hsl(224,12%,4%)] -->
         </div>
 
     </div>
-</div>
 
-
-<div class="
-    bg-[hsl(240,11%,96%)]
-    dark:bg-[hsl(223,12%,1%)]
-">
 
     <div class="
         py-20
@@ -1614,7 +1593,8 @@ dark:bg-[hsl(224,12%,4%)] -->
             "
         >
             <svg class="
-                fill-teal-600
+                fill-teal-700
+                dark:fill-teal-500
                 pb-4
                 w-12
                 h-12
@@ -1627,9 +1607,9 @@ dark:bg-[hsl(224,12%,4%)] -->
 
 
             <h3 class="
-                dark:text-gray-100
-                font-semibold
-                text-xl
+                text-2xl
+                lg:text-3xl
+                font-bold
                 pb-2
                 "
             >
@@ -1637,11 +1617,15 @@ dark:bg-[hsl(224,12%,4%)] -->
             </h3>
             <p class="
                 col-start-2 
-                text-gray-700 
+                text-gray-500 
                 dark:text-gray-400
+                font-semibold
                 "
             >
-                Write asm as regular inline code without using strings or cryptic
+                <span class="
+                    text-teal-700
+                    dark:text-teal-500
+                ">Write asm as regular inline code</span> without using strings or cryptic
                 constraints.
             </p>
         </div>
@@ -1653,7 +1637,8 @@ dark:bg-[hsl(224,12%,4%)] -->
             "
         >
             <svg class="
-                fill-current
+                fill-teal-700
+                dark:fill-teal-500
                 pb-4
                 w-12
                 h-12
@@ -1661,14 +1646,15 @@ dark:bg-[hsl(224,12%,4%)] -->
                 xmlns="http://www.w3.org/2000/svg" 
                 viewBox="0 0 24 24"
             >
-                <path class="fill-red-800" d="M11 6h2v5h-2zm0 6h2v2h-2z"></path>
-                <path class="fill-red-600" d="M20 2H4c-1.103 0-2 .897-2 2v18l5.333-4H20c1.103 0 2-.897 2-2V4c0-1.103-.897-2-2-2zm0 14H6.667L4 18V4h16v12z"></path>    
+                <path d="M11 6h2v5h-2zm0 6h2v2h-2z"></path>
+                <path d="M20 2H4c-1.103 0-2 .897-2 2v18l5.333-4H20c1.103 0 2-.897 2-2V4c0-1.103-.897-2-2-2zm0 14H6.667L4 18V4h16v12z"></path>    
             
             </svg>
 
 
             <h3 class="
-                text-xl
+                text-2xl
+                lg:text-3xl
                 font-bold
                 pb-2
             ">
@@ -1677,8 +1663,9 @@ dark:bg-[hsl(224,12%,4%)] -->
 
             <p class="
                 col-start-2 
-                text-gray-700 
+                text-gray-500 
                 dark:text-gray-400
+                font-semibold
                 "
             >
                 Error handling that combines the best parts of "Result" errors
@@ -1687,7 +1674,6 @@ dark:bg-[hsl(224,12%,4%)] -->
         </div>
 
 
-        
 
     </div>
 </div>
@@ -1699,9 +1685,12 @@ dark:bg-[hsl(224,12%,4%)] -->
 
 
 <!-- Safety And Flexibility -->
+<!-- TODO: One dominant colour per block, desaturate that for the background -->
 <div class="
+    my-24
+    sm:my-40
     bg-[hsl(240,11%,96%)]
-    dark:bg-[hsl(223,12%,1%)]
+    dark:bg-[hsl(224,32%,6%)]
 "
 >
     <div class="
@@ -1728,10 +1717,17 @@ dark:bg-[hsl(224,12%,4%)] -->
             lg:pl-0
             lg:pr-24
         ">
+            <hr class="
+                border-[3px] 
+                border-rose-700
+                dark:border-rose-500
+                mb-4
+            ">
+
             <h2 class="
-                text-xl
-                md:text-2xl
-                font-semibold
+                text-4xl
+                md:text-5xl
+                font-bold
                 dark:text-gray-100
                 pb-4
                 "
@@ -1740,9 +1736,10 @@ dark:bg-[hsl(224,12%,4%)] -->
             </h2>
 
             <p class="
-                pb-8
-                text-gray-700 
+                pb-12
+                text-gray-500 
                 dark:text-gray-400
+                font-semibold
                 "
             >
                 C3's has powerful safety features covering null safety, 
@@ -1752,9 +1749,10 @@ dark:bg-[hsl(224,12%,4%)] -->
             </p>
 
             <p class="
-                pb-8
-                text-gray-700 
+                pb-12
+                text-gray-500 
                 dark:text-gray-400
+                font-semibold
                 "
             >
                 Flexibly choose how you manage safety, as each feature 
@@ -1810,7 +1808,8 @@ dark:bg-[hsl(224,12%,4%)] -->
             "
         >
             <svg class="
-                fill-cyan-600
+                fill-rose-700
+                dark:fill-rose-500
                 pb-4
                 w-12
                 h-12
@@ -1823,18 +1822,19 @@ dark:bg-[hsl(224,12%,4%)] -->
 
 
             <h3 class="
-                dark:text-gray-100
-                font-semibold
-                text-xl
+                text-2xl
+                lg:text-3xl
+                font-bold
                 pb-2
                 "
             >
                 Built-In Slices And Slicing
             </h3>
             <p class="
-                col-start-2 
-                text-gray-700 
+                pb-12
+                text-gray-500 
                 dark:text-gray-400
+                font-semibold
                 "
             >
                 Slices are type safe "pointer + length" types that natively
@@ -1849,7 +1849,8 @@ dark:bg-[hsl(224,12%,4%)] -->
             "
         >
             <svg class="
-                fill-sky-600
+                fill-rose-700
+                dark:fill-rose-500
                 pb-4
                 w-12
                 h-12
@@ -1863,7 +1864,8 @@ dark:bg-[hsl(224,12%,4%)] -->
 
 
             <h3 class="
-                text-xl
+                text-2xl
+                lg:text-3xl
                 font-bold
                 pb-2
             ">
@@ -1871,9 +1873,10 @@ dark:bg-[hsl(224,12%,4%)] -->
             </h3>
 
             <p class="
-                col-start-2 
-                text-gray-700 
+                pb-12
+                text-gray-500 
                 dark:text-gray-400
+                font-semibold
                 "
             >
                 C3 brings programming-by-contract to the mainstream with
@@ -1889,7 +1892,8 @@ dark:bg-[hsl(224,12%,4%)] -->
             "
         >
             <svg class="
-                fill-red-600
+                fill-rose-700
+                dark:fill-rose-500
                 pb-4
                 w-12
                 h-12
@@ -1902,21 +1906,25 @@ dark:bg-[hsl(224,12%,4%)] -->
 
 
             <h3 class="
-                dark:text-gray-100
-                font-semibold
-                text-xl
+                text-2xl
+                lg:text-3xl
+                font-bold
                 pb-2
                 "
             >
                 Debug With Safety Checks
             </h3>
             <p class="
-                col-start-2 
-                text-gray-700 
+                pb-12
+                text-gray-500 
                 dark:text-gray-400
+                font-semibold
                 "
             >
-                Feel confident in your code's correctness: in debug mode the
+                <span class="
+                text-rose-700 
+                dark:text-rose-500
+                ">Feel confident in your code's correctness</span> in debug mode the
                 compiler inserts extensive runtime bounds checks and value checks,
                 which together with contracts will let you catch bugs early.
             </p>
@@ -1929,7 +1937,8 @@ dark:bg-[hsl(224,12%,4%)] -->
             "
         >
             <svg class="
-                fill-current
+                fill-rose-700
+                dark:fill-rose-500
                 pb-4
                 w-12
                 h-12
@@ -1945,7 +1954,8 @@ dark:bg-[hsl(224,12%,4%)] -->
 
 
             <h3 class="
-                text-xl
+                text-2xl
+                lg:text-3xl
                 font-bold
                 pb-2
             ">
@@ -1953,9 +1963,10 @@ dark:bg-[hsl(224,12%,4%)] -->
             </h3>
 
             <p class="
-                col-start-2 
-                text-gray-700 
+                pb-12
+                text-gray-500 
                 dark:text-gray-400
+                font-semibold
                 "
             >
                 No more cryptic "segmentation fault" errors! The C3 standard
@@ -1984,7 +1995,7 @@ dark:bg-[hsl(224,12%,4%)] -->
     py-16
     px-12
     bg-[hsl(240,11%,96%)]
-    dark:bg-[hsl(223,12%,1%)]
+    dark:bg-[hsl(224,32%,6%)]
     "
 >
     <div class="
@@ -1997,28 +2008,27 @@ dark:bg-[hsl(224,12%,4%)] -->
             flex
             justify-center
             items-center
-            text-center
-            py-3
-            px-2
-            md:px-14
-
-            mt-4
-            md:mt-0
-            text-black
-            bg-white
-            dark:text-gray-100
-            dark:bg-[hsl(224,12%,4%)]
-            mb-6
+            gap-x-3 text-center
+            bg-blue-600
+            border-blue-600
+            hover:border-slate-950
             border-2
-            border-gray-300
-            dark:border-gray-700
-        
             rounded-2xl
-            ring-2
-            dark:ring-[hsl(224,12%,12%)]
-            ring-[hsl(224,12%,95%)]
-            dark:hover:border-gray-600
-            hover:border-gray-400"
+            py-3
+            px-4
+            shadow-sm
+            focus:z-10
+            focus:outline-none focus:ring-2 dark:focus:ring-blue-200 focus:ring-blue-800 focus:ring-offset-2 focus:ring-offset-white dark:focus:ring-offset-stone-950
+            transition-all
+            leading-1
+            text-sm
+            text-white
+            font-semibold
+            select-none
+            dark:bg-blue-600
+            dark:hover:border-blue-600
+            dark:border-blue-600
+            dark:text-white"
             href="/getting-started/"
             aria-label="Read the C3 documentation"
         >
@@ -2047,7 +2057,7 @@ dark:bg-[hsl(224,12%,4%)] -->
             md:text-2xl
             font-semibold
             dark:text-gray-100
-            pt-4
+            pt-8
             "
         >
         Get Involved
@@ -2060,7 +2070,7 @@ dark:bg-[hsl(224,12%,4%)] -->
     ">
         <div class="
             grid
-            grid-cols-3
+            grid-cols-2
             gap-4     
             pt-6
         ">
@@ -2084,7 +2094,7 @@ dark:bg-[hsl(224,12%,4%)] -->
                 text-black
                 bg-white
                 dark:text-gray-100
-                dark:bg-[hsl(224,12%,4%)]
+                dark:bg-[hsl(224,32%,6%)]
                 border-2
                 border-gray-300
                 dark:border-gray-700
@@ -2124,7 +2134,7 @@ dark:bg-[hsl(224,12%,4%)] -->
             <!-- ================================= -->
 
             <!-- Discourse Icon -->
-            <a class="
+            <!-- <a class="
                 
                 flex
                 flex-col
@@ -2141,7 +2151,7 @@ dark:bg-[hsl(224,12%,4%)] -->
                 text-black
                 bg-white
                 dark:text-gray-100
-                dark:bg-[hsl(224,12%,4%)]
+                dark:bg-[hsl(224,32%,6%)]
                 border-2
                 border-gray-300
                 dark:border-gray-700
@@ -2171,7 +2181,7 @@ dark:bg-[hsl(224,12%,4%)] -->
                 ">
                     Forums
                 </p>
-            </a>
+            </a> -->
 
             <!-- ================================= -->
 
@@ -2192,7 +2202,7 @@ dark:bg-[hsl(224,12%,4%)] -->
                 text-black
                 bg-white
                 dark:text-gray-100
-                dark:bg-[hsl(224,12%,4%)]
+                dark:bg-[hsl(224,32%,6%)]
                 border-2
                 border-gray-300
                 dark:border-gray-700
@@ -2273,7 +2283,7 @@ dark:bg-[hsl(224,12%,4%)] -->
             </h2>
 
             <p class="
-                pb-8
+                pb-12
                 text-gray-700 
                 dark:text-gray-400
                 "
@@ -2292,7 +2302,7 @@ dark:bg-[hsl(224,12%,4%)] -->
             </p>
 
             <p class="
-                pb-8
+                pb-12
                 text-gray-700 
                 dark:text-gray-400
                 "
