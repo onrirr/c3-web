@@ -62,13 +62,46 @@ import Layout from "../components/front_page_layout.astro";
 
     
 
+    <!-- bg-[hsl(224,25%,96%)]
+    dark:bg-[hsl(224,27%,2%)] -->
     <body class="
-        bg-[hsl(224,47%,90%)]
-        dark:bg-[hsl(224,27%,2%)]
+        relative
+        bg-gray-50
+        dark:bg-[hsl(224,32%,6%)]
     ">
-            <div >
-                <Layout/>
-            </div>
+
+    <!-- <div class="
+        pointer-events-none
+        absolute
+        left-[-20rem]
+        bg-indigo-200/50
+        w-[50vw]
+        h-[80rem]
+        rounded-full
+        blur-3xl
+        z-0
+        mix-blend-darken
+    "/>
+
+    <div class="
+        pointer-events-none
+        absolute
+        right-[-45rem]
+
+        bg-purple-200/50
+        w-[50vw]
+        h-[80rem]
+        rounded-full
+        blur-3xl
+        z-0
+        mix-blend-darken
+    "/> -->
+
+        <div >
+            <Layout/>
+        </div>
+
+
         <link rel="stylesheet" href="/index.css" />
     </body>
 

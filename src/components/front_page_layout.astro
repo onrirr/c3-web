@@ -612,73 +612,126 @@ await setTimeout(highlighter.dispose, 2000)
         before:transform
         before:-translate-x-1/2"
     >
-    <div class="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-10">
-        <div class="mt-5 text-center mx-auto">
-        <h1
-            class="flex justify-center content-center font-bold text-stone-950 text-2xl md:text-5xl lg:text-6xl dark:text-gray-200"
+        <div class="
+            max-w-[85rem] 
+            mx-auto 
+            px-4 
+            sm:px-6 
+            lg:px-8 
+            pt-24 
+            pb-10
+            "
         >
-            <img src="/logo.svg" class="flex justfity-center" />
-        </h1>
-        </div>
-        <div class="mt-5 max-w-3xl text-center mx-auto">
-        <p class="text-lg text-gray-600 dark:text-gray-400">
-            <!-- The Next Generation of C -->
-        </p>
-        </div>
-        <div class="mt-8 grid gap-3 w-full sm:inline-flex sm:justify-center">
-        <a class="
-            flex
-            justify-center
-            items-center
-            gap-x-3 text-center
-            bg-blue-600
-            border-blue-600
-            hover:border-slate-950
-            border-2
-            rounded-2xl
-            py-3
-            px-4
-            shadow-sm
-            focus:z-10
-            focus:outline-none focus:ring-2 dark:focus:ring-blue-200 focus:ring-blue-800 focus:ring-offset-2 focus:ring-offset-white dark:focus:ring-offset-stone-950
-            transition-all
-            leading-1
-            text-sm
-            text-white
-            font-semibold
-            select-none
-            dark:bg-blue-600
-            dark:hover:border-blue-600
-            dark:border-blue-600
-            dark:text-white"
-            href="/getting-started"
-        >
-            Get started
-            <svg
-            class="w-3 h-3"
-            width="16"
-            height="16"
-            viewBox="0 0 16 16"
-            fill="none"
+            <div class="
+                mt-5 
+                text-center 
+                mx-auto
+                "
             >
-            <path
-                d="M5.27921 2L10.9257 7.64645C11.1209 7.84171 11.1209 8.15829 10.9257 8.35355L5.27921 14"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"></path>
-            </svg>
-        </a>
-        </div>
-        <div class="mt-5 flex justify-center items-center gap-x-1 sm:gap-x-3">
-        <span class="text-sm text-gray-600 dark:text-gray-400"
-            >Current version:
-        </span>
-        <span class="text-sm font-bold text-gray-900 dark:text-white">0.6.3</span>
 
+                <h1 class="
+                    flex 
+                    justify-center 
+                    content-center 
+                    font-bold 
+                    text-stone-950 
+                    text-2xl 
+                    md:text-5xl 
+                    lg:text-6xl 
+                    dark:text-gray-200
+                    "
+                >
+                    <img class="
+                        flex 
+                        justfity-center
+                    " 
+                        src="/logo.svg" 
+                        alt="C3 logo"
+                    />
+                </h1>
+
+            </div>
+
+
+            <div class="
+                mt-8 
+                grid 
+                gap-3 
+                w-full 
+                sm:inline-flex 
+                sm:justify-center
+                "
+            >
+                <a class="
+                    flex
+                    justify-center
+                    items-center
+                    gap-x-3 text-center
+                    bg-blue-600
+                    border-blue-600
+                    hover:border-slate-950
+                    border-2
+                    rounded-2xl
+                    py-3
+                    px-4
+                    shadow-sm
+                    focus:z-10
+                    focus:outline-none focus:ring-2 dark:focus:ring-blue-200 focus:ring-blue-800 focus:ring-offset-2 focus:ring-offset-white dark:focus:ring-offset-stone-950
+                    transition-all
+                    leading-1
+                    text-sm
+                    text-white
+                    font-semibold
+                    select-none
+                    dark:bg-blue-600
+                    dark:hover:border-blue-600
+                    dark:border-blue-600
+                    dark:text-white"
+                    href="/getting-started"
+                >
+                    Get started
+                    <svg
+                        class="w-3 h-3"
+                        width="16"
+                        height="16"
+                        viewBox="0 0 16 16"
+                        fill="none"
+                    >
+                    <path
+                        d="M5.27921 2L10.9257 7.64645C11.1209 7.84171 11.1209 8.15829 10.9257 8.35355L5.27921 14"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"></path>
+                    </svg>
+                </a>
+            </div>
+
+            <div class="
+                mt-5 
+                flex 
+                justify-center 
+                items-center 
+                gap-x-1 
+                sm:gap-x-3
+                "
+            >
+                <span class="
+                    text-sm 
+                    text-gray-600 
+                    dark:text-gray-400"
+                >Current version:
+                </span>
+
+                <span class="
+                    text-sm 
+                    font-bold 
+                    text-gray-900 
+                    dark:text-white
+                ">0.6.4</span>
+
+            </div>
         </div>
     </div>
-    </div>
-
 
     <!-- end of imported hero -->
     <!-- ======================== -->
@@ -811,7 +864,9 @@ await setTimeout(highlighter.dispose, 2000)
 <!-- bg-gray-50 before -->
  <!-- bg-[hsl(224,22%,97%)] -->
   <!-- bg-[hsl(193,2%,98%)] -->
-<div class="
+
+<!-- ORIGINAL C3 USES C ABI SLICE -->
+<!-- <div class="
     my-24
     sm:my-40
     
@@ -871,9 +926,9 @@ await setTimeout(highlighter.dispose, 2000)
             >
                 C3 fits into existing C projects, like
                 <a class="
-                    font-semibold 
+                    font-bold 
                     text-blue-500 
-                    hover:underline" 
+                    underline" 
                     href="https://github.com/c3lang/vkQuake"
                     aria-label="C3 integrates with C projects here's an example with VKQuake"
                 >
@@ -897,7 +952,7 @@ await setTimeout(highlighter.dispose, 2000)
             
         </div>
 
-        <!-- No border on this div, but forces tailwind to compile these classes -->
+
         <div class="
             lg:col-start-1
             lg:row-start-1
@@ -1128,9 +1183,325 @@ await setTimeout(highlighter.dispose, 2000)
 
     </div>
     
+</div> -->
+
+
+
+<div class="
+    my-24
+    sm:my-40
+    bg-gray-100
+    dark:bg-[hsl(224,32%,8%)]
+    "
+>
+    <div class="
+        grid
+        grid-cols-1
+        lg:grid-cols-2
+        grid-rows-[repeat(3,min-content)]
+        px-4
+        sm:px-24
+
+        dark:text-gray-200 
+        pt-16
+        lg:pt-20
+        max-w-[90rem]
+        mx-auto
+        "
+    >
+        <div class="
+            lg:col-span-1
+            
+            pb-20
+
+            flex
+            flex-col
+            items-left
+        ">
+            <!-- <hr class="
+                border-[3px] 
+                border-green-500
+                dark:border-green-500
+                mb-4
+                w-full
+            "> -->
+
+            <h2 class="
+                text-4xl
+                md:text-5xl
+                font-bold
+                dark:text-gray-100
+                mb-4
+                "
+            >
+                C3 Uses C ABI
+            </h2>
+
+            <p class="
+                pb-4
+                text-gray-500 
+                dark:text-gray-400
+                font-semibold
+                "
+            >
+                <span class="
+                    font-extrabold
+                    text-green-600
+                    dark:text-green-500
+                ">C3 natively integrates into existing C projects</span>
+                You can also natively link C into C3 projects without C3 bindings.
+            
+                If you're working in a C codebase and you want some more 
+                modern features like improved error handling, contracts and safety,
+                you might be interested in writing new functionality in C3. 
+            </p>
+
+        </div>
+
+
+   
+        <div class="
+            lg:col-span-2
+            
+        ">
+            <DemoCode
+                selectID="perf_code_examples"
+                buttons={
+                    [
+                        "Temp Allocator",
+                        "SIMD",
+                        "Inline ASM",
+                        "Threads"
+                    ]
+                }
+                code={code_input_perf}
+                highlighter={highlighter}
+            />
+        </div> 
+        
+
+
+        <div class="
+        lg:col-span-2
+
+        mx-auto
+        max-w-[90rem]
+        grid
+        grid-cols-1
+        md:grid-cols-2
+
+        gap-x-[7.5rem]
+        lg:gap-x-[10rem]
+        gap-y-14
+        lg:gap-y-20 
+
+        py-20
+
+        
+  
+        text-gray-800 
+        dark:text-gray-200 
+        "
+    >
+        
+        <!-- <div class="   
+            flex
+            flex-col
+            "
+        >
+            <svg class="
+                fill-cyan-600
+                dark:fill-cyan-500
+                pb-4
+                w-12
+                h-12
+                "
+                xmlns="http://www.w3.org/2000/svg" 
+                viewBox="0 0 24 24"
+            >
+                <path d="M19 8h-3V5c0-1.103-.897-2-2-2H5c-1.103 0-2 .897-2 2v9c0 1.103.897 2 2 2h3v3c0 1.103.897 2 2 2h9c1.103 0 2-.897 2-2v-9c0-1.103-.897-2-2-2zm-4 7H9V9h6v6z"></path>
+            </svg>
+
+
+            <h3 class="
+                text-2xl
+                lg:text-3xl
+                font-bold
+                pb-2
+            ">
+                Full C ABI Compatibility
+            </h3>
+            <p class="
+                
+                text-gray-500 
+                dark:text-gray-400
+                font-semibold
+                "
+            >
+                <span class="
+                    text-cyan-600
+                    dark:text-cyan-500
+                    font-bold
+                ">
+                The full C3 feature set is available from C.</span>
+                C3 fits right into your C/C++ application with full C ABI
+                compatibility out of the box. 
+            </p>
+        </div> -->
+
+
+        <div class="   
+            flex
+            flex-col
+            "
+        >
+
+            <svg class="
+                fill-green-500
+                dark:fill-green-500
+                pr-4
+                w-12
+                h-12
+                rotate-90
+                "
+                xmlns="http://www.w3.org/2000/svg" 
+                viewBox="0 0 24 24"
+            >
+                
+                <path d="M3 8h2v5c0 2.206 1.794 4 4 4h2v5h2v-5h2c2.206 0 4-1.794 4-4V8h2V6H3v2zm4-6h2v3H7zm8 0h2v3h-2z"></path>
+            </svg>
+
+
+            <h3 class="
+                text-2xl
+                lg:text-3xl
+                font-bold
+                pb-2
+            ">
+                C3 integrates with C
+            </h3>
+
+            <p class="
+                col-start-2 
+                text-gray-500 
+                dark:text-gray-400
+                font-semibold
+                "
+            >
+                <span class="
+                    font-extrabold
+                    text-green-600
+                    dark:text-green-500
+                ">When compiled, C and C3 code are
+                indistinguishable</span> and can work together seamlessly.
+            </p>
+            
+        </div>
+
+
+        <div class="   
+            flex
+            flex-col
+            "
+        >
+
+            <svg class="
+                fill-green-500
+                dark:fill-green-500
+                pl-4
+                w-12
+                h-12
+                -rotate-90
+                "
+                xmlns="http://www.w3.org/2000/svg" 
+                viewBox="0 0 24 24"
+            >
+                <path d="M3 8h2v5c0 2.206 1.794 4 4 4h2v5h2v-5h2c2.206 0 4-1.794 4-4V8h2V6H3v2zm4-6h2v3H7zm8 0h2v3h-2z"></path>
+            </svg>
+
+
+            <h3 class="
+                text-2xl
+                lg:text-3xl
+                font-bold
+                pb-2
+            ">
+                C Integrates With C3
+            </h3>
+
+            <p class="
+                col-start-2 
+                text-gray-500 
+                dark:text-gray-400
+                font-semibold
+                "
+            >
+            <span class="
+                font-extrabold
+                text-green-600
+                dark:text-green-500
+            ">C libraries can be compiled natively with C3 code</span> so 
+            it's easy to benefit from the rich C ecosystem from C3. 
+            </p>
+
+        </div>
+
+
+
+        <!-- <div class="   
+            flex
+            flex-col
+            "
+        >
+            <svg class="
+                fill-cyan-600
+                dark:fill-cyan-500
+                pb-4
+                w-12
+                h-12
+                "
+                xmlns="http://www.w3.org/2000/svg" 
+                viewBox="0 0 24 24"
+            >
+                <path d="M18 10H9V7c0-1.654 1.346-3 3-3s3 1.346 3 3h2c0-2.757-2.243-5-5-5S7 4.243 7 7v3H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8a2 2 0 0 0-2-2zm-7.939 5.499A2.002 2.002 0 0 1 14 16a1.99 1.99 0 0 1-1 1.723V20h-2v-2.277a1.992 1.992 0 0 1-.939-2.224z"></path>
+            </svg>
+
+            
+            <h3 class="
+                text-2xl
+                lg:text-3xl
+                font-bold
+                pb-2
+            ">
+                Unlock The power Of C3  
+            </h3>
+
+            <p class="
+                col-start-2 
+                text-gray-500 
+                dark:text-gray-400
+                font-semibold
+                "
+            >
+                <span class="
+                    font-bold
+                    text-cyan-600
+                    dark:text-cyan-500
+                ">Wrapping a C library with C3 adds library support for C3.</span>
+                Like marking variables as Optionals so errors are always handled,
+                adding programming-by-contract support or adding interface support and 
+                much more.
+            </p>
+        </div> -->
+
+    </div>
+
+    </div>
+
+
+    
+    
 </div>
-
-
 
 
 
@@ -1142,11 +1513,16 @@ await setTimeout(highlighter.dispose, 2000)
 <!-- TODO: Add bullet points for Allocator -->
 <!-- TODO: Add bullet points for os abstractions eg threads -->
 <!-- TODO: One dominant colour per block, desaturate that for the background -->
+
+<!-- my-24
+    sm:my-40
+    bg-gray-50
+    dark:bg-[hsl(224,32%,6%)] -->
 <div class="
     my-24
     sm:my-40
-    bg-gray-50
-    dark:bg-[hsl(224,32%,6%)]
+    bg-gray-100
+    dark:bg-[hsl(224,32%,8%)]
 "
 >
         <div class="
@@ -1173,12 +1549,12 @@ await setTimeout(highlighter.dispose, 2000)
                 lg:pl-0
                 lg:pr-24
             ">
-                <hr class="
+                <!-- <hr class="
                     border-[3px] 
-                    border-purple-700
+                    border-purple-600
                     dark:border-purple-500
                     mb-4
-                ">
+                "> -->
 
                 <h2 class="
                     text-4xl
@@ -1270,7 +1646,7 @@ await setTimeout(highlighter.dispose, 2000)
             "
         >
             <svg class="
-                fill-purple-800
+                fill-purple-600
                 dark:fill-purple-400
                 pb-4
                 w-12
@@ -1298,15 +1674,15 @@ await setTimeout(highlighter.dispose, 2000)
                 "
             >
                 <span class="
-                    text-purple-800
+                    text-purple-700
                     dark:text-purple-400
-                    font-bold
+                    font-extrabold
                 ">To namespace and organise</span> your code 
                 simple and scalable design which follows established patterns 
                 <span class="
-                    text-purple-800
+                    text-purple-700
                     dark:text-purple-400
-                    font-bold
+                    font-extrabold
                 ">making large codebases easy to manage</span>.
             </p>
         </div>
@@ -1318,7 +1694,7 @@ await setTimeout(highlighter.dispose, 2000)
             "
         >
         <svg class="
-            fill-purple-800
+            fill-purple-700
             dark:fill-purple-400
             pb-4
             w-12
@@ -1348,7 +1724,7 @@ await setTimeout(highlighter.dispose, 2000)
                 "
             >
                 <span class="
-                    text-purple-800
+                    text-purple-700
                     dark:text-purple-400 
                     font-bold
                 ">For simple polymorphism</span> 
@@ -1364,7 +1740,7 @@ await setTimeout(highlighter.dispose, 2000)
             "
         >
             <svg class="
-                fill-purple-800
+                fill-purple-600
                 dark:fill-purple-400
                 pb-4
                 w-12
@@ -1393,9 +1769,9 @@ await setTimeout(highlighter.dispose, 2000)
                 "
             >
                 <span class="
-                text-purple-800
-                dark:text-purple-400
-                font-bold
+                    text-purple-700
+                    dark:text-purple-400
+                    font-extrabold
                 ">That are just as easy as regular functions</span>.
                 Packing much more power than C's preprocessor, they're deliberately
                 balanced to ensure that code reading isn't made difficult.
@@ -1410,7 +1786,7 @@ await setTimeout(highlighter.dispose, 2000)
             "
         >
             <svg class="
-                fill-purple-800
+                fill-purple-600
                 dark:fill-purple-400
                 pb-4
                 w-12
@@ -1439,9 +1815,9 @@ await setTimeout(highlighter.dispose, 2000)
                 "
             >
                 <span class="
-                    text-purple-800
+                    text-purple-700
                     dark:text-purple-400
-                    font-bold
+                    font-extrabold
                 ">For type introspection</span>
                 powering flexible macros and functions.
             </p>
@@ -1457,8 +1833,8 @@ await setTimeout(highlighter.dispose, 2000)
 <div class="
     my-24
     sm:my-40
-    bg-gray-50
-    dark:bg-[hsl(224,32%,6%)]
+    bg-gray-100
+    dark:bg-[hsl(224,32%,8%)]
 "
 >
     <div class="
@@ -1486,12 +1862,12 @@ await setTimeout(highlighter.dispose, 2000)
             
         ">
         
-            <hr class="
+            <!-- <hr class="
                 border-[3px] 
-                border-teal-700
-                dark:border-teal-500
+                border-blue-500
+                dark:border-blue-500
                 mb-4
-            ">
+            "> -->
             
             <h2 class="
                 text-4xl
@@ -1593,8 +1969,8 @@ await setTimeout(highlighter.dispose, 2000)
             "
         >
             <svg class="
-                fill-teal-700
-                dark:fill-teal-500
+                fill-blue-500
+                dark:fill-blue-500
                 pb-4
                 w-12
                 h-12
@@ -1623,8 +1999,9 @@ await setTimeout(highlighter.dispose, 2000)
                 "
             >
                 <span class="
-                    text-teal-700
-                    dark:text-teal-500
+                    text-blue-600
+                    dark:text-blue-500
+                    font-extrabold
                 ">Write asm as regular inline code</span> without using strings or cryptic
                 constraints.
             </p>
@@ -1637,8 +2014,8 @@ await setTimeout(highlighter.dispose, 2000)
             "
         >
             <svg class="
-                fill-teal-700
-                dark:fill-teal-500
+                fill-blue-500
+                dark:fill-blue-500
                 pb-4
                 w-12
                 h-12
@@ -1689,8 +2066,8 @@ await setTimeout(highlighter.dispose, 2000)
 <div class="
     my-24
     sm:my-40
-    bg-gray-50
-    dark:bg-[hsl(224,32%,6%)]
+    bg-gray-100
+    dark:bg-[hsl(224,32%,8%)]
 "
 >
     <div class="
@@ -1717,12 +2094,12 @@ await setTimeout(highlighter.dispose, 2000)
             lg:pl-0
             lg:pr-24
         ">
-            <hr class="
+            <!-- <hr class="
                 border-[3px] 
-                border-rose-700
-                dark:border-rose-500
+                border-orange-600
+                dark:border-orange-500
                 mb-4
-            ">
+            "> -->
 
             <h2 class="
                 text-4xl
@@ -1808,8 +2185,8 @@ await setTimeout(highlighter.dispose, 2000)
             "
         >
             <svg class="
-                fill-rose-700
-                dark:fill-rose-500
+                fill-orange-600
+                dark:fill-orange-500
                 pb-4
                 w-12
                 h-12
@@ -1849,8 +2226,8 @@ await setTimeout(highlighter.dispose, 2000)
             "
         >
             <svg class="
-                fill-rose-700
-                dark:fill-rose-500
+                fill-orange-600
+                dark:fill-orange-500
                 pb-4
                 w-12
                 h-12
@@ -1892,8 +2269,8 @@ await setTimeout(highlighter.dispose, 2000)
             "
         >
             <svg class="
-                fill-rose-700
-                dark:fill-rose-500
+                fill-orange-600
+                dark:fill-orange-500
                 pb-4
                 w-12
                 h-12
@@ -1922,8 +2299,8 @@ await setTimeout(highlighter.dispose, 2000)
                 "
             >
                 <span class="
-                text-rose-700 
-                dark:text-rose-500
+                text-orange-700 
+                dark:text-orange-500
                 ">Feel confident in your code's correctness</span> in debug mode the
                 compiler inserts extensive runtime bounds checks and value checks,
                 which together with contracts will let you catch bugs early.
@@ -1937,8 +2314,8 @@ await setTimeout(highlighter.dispose, 2000)
             "
         >
             <svg class="
-                fill-rose-700
-                dark:fill-rose-500
+                fill-orange-600
+                dark:fill-orange-500
                 pb-4
                 w-12
                 h-12
